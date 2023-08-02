@@ -102,7 +102,7 @@
 			should_fall = pick(TRUE, FALSE, FALSE)
 		if(50 to 99)
 			should_fall = pick(TRUE, FALSE)
-		if(100 to INFINITE)
+		if(100 to INFINITY)
 			should_fall = TRUE
 	if(should_fall && !check_mod())
 		victim.Knockdown(3 SECONDS)
