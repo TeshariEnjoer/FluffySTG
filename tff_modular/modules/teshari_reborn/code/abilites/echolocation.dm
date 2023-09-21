@@ -1,6 +1,9 @@
 #define ECHOLOCATION_MAX_CREATURE 5
 #define ECHOLOCATION_BASE_COOLDWN_TIME 10 SECONDS
+<<<<<<< HEAD
 #define ECHOLOCATION_PING_COOLDOWN 3 SECONDS
+=======
+>>>>>>> master
 #define ECHOLOCATION_RANGE 9
 
 /datum/action/cooldown/teshari/echolocation
@@ -10,7 +13,10 @@
 	cooldown_time = ECHOLOCATION_BASE_COOLDWN_TIME
 	var/active = FALSE
 	var/cycle_cooldown = ECHOLOCATION_BASE_COOLDWN_TIME
+<<<<<<< HEAD
 	COOLDOWN_DECLARE(echolocation_ping_cooldown)
+=======
+>>>>>>> master
 
 /datum/action/cooldown/teshari/echolocation/New(Target, original)
 	. = ..()
@@ -76,10 +82,13 @@
 		deisable_echolocation()
 		return
 
+<<<<<<< HEAD
 	if(!COOLDOWN_FINISHED(src, echolocation_ping_cooldown))
 		return
 	COOLDOWN_START(src, echolocation_ping_cooldown, ECHOLOCATION_PING_COOLDOWN)
 
+=======
+>>>>>>> master
 	var/founding_creature = 0
 	for(var/mob/living/creature in range(ECHOLOCATION_RANGE, owner))
 		if(creature == owner || creature.stat == DEAD)
@@ -102,8 +111,11 @@
 	cooldown_time *= (stun_time/20)
 	tesh.Paralyze(stun_time/2)
 	tesh.Knockdown(stun_time)
+<<<<<<< HEAD
 	var/obj/item/organ/internal/ears/E = tesh.get_organ_slot(ORGAN_SLOT_EARS)
 	E.apply_organ_damage(40)
+=======
+>>>>>>> master
 
 	to_chat(tesh, span_userdanger("Your ears fill with pain as the horrible noise hits them!"))
 	deisable_echolocation()
@@ -116,4 +128,7 @@
 #undef ECHOLOCATION_MAX_CREATURE
 #undef ECHOLOCATION_BASE_COOLDWN_TIME
 #undef ECHOLOCATION_RANGE
+<<<<<<< HEAD
 #undef ECHOLOCATION_PING_COOLDOWN
+=======
+>>>>>>> master

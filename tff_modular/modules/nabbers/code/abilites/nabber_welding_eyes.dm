@@ -8,9 +8,15 @@
 	. = ..()
 	eyes.toggle_shielding()
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> master
 
 /datum/action/toggle_welding/Destroy()
 	. = ..()
 	eyes = null
+<<<<<<< HEAD
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+>>>>>>> master

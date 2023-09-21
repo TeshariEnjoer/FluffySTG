@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define ORGGAN_ICON_NABBER 'tff_modular/modules/nabbers/icons/organs/nabber_organs.dmi'
 
 =======
+=======
+>>>>>>> master
 #define NABBER_COLD_THRESHOLD_1 180
 #define NABBER_COLD_THRESHOLD_2 140
 #define NABBER_COLD_THRESHOLD_3 100
@@ -18,7 +21,10 @@
 	disliked_foodtypes = CLOTH | FRIED | TOXIC
 	toxic_foodtypes = DAIRY
 
+<<<<<<< HEAD
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+>>>>>>> master
 /obj/item/organ/internal/ears/nabber
 	name = "nabber ears"
 	icon = ORGGAN_ICON_NABBER
@@ -53,10 +59,14 @@
 /obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, drop_if_replaced)
 	. = ..()
 <<<<<<< HEAD
+<<<<<<< HEAD
 	shield = new()
 =======
 	shield = new(eye_recipient)
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+	shield = new(eye_recipient)
+>>>>>>> master
 	shield.button_icon = ORGGAN_ICON_NABBER
 	shield.button_icon_state = "eyes"
 	shield.Grant(eye_recipient)
@@ -64,15 +74,21 @@
 
 /obj/item/organ/internal/eyes/robotic/nabber/proc/toggle_shielding()
 <<<<<<< HEAD
+<<<<<<< HEAD
 	active = !active
 	playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 =======
+=======
+>>>>>>> master
 	if(!owner)
 		return
 
 	active = !active
 	playsound(owner, 'sound/machines/click.ogg', 50, TRUE)
+<<<<<<< HEAD
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+>>>>>>> master
 
 	if(active)
 		flash_protect = FLASH_PROTECTION_WELDER
@@ -87,17 +103,23 @@
 	owner.balloon_alert(owner, "Welder eyelids open!")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
 	. = ..()
 	shield.Destroy()
 =======
+=======
+>>>>>>> master
 /obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
 	. = ..()
 	shield.Destroy()
 	active = FALSE
 	toggle_shielding()
+<<<<<<< HEAD
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+>>>>>>> master
 
 /obj/item/organ/internal/lungs/nabber
 	name = "nabber lungs"

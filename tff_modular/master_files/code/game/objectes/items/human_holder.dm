@@ -25,7 +25,11 @@
 /obj/item/clothing/head/mob_holder/human/deposit(mob/living/carbon/human/H, obj/item/storage/backpack/bag)
 	. = ..()
 	H.AddComponent(/datum/component/human_holder, holder = src, handle_human = H, handle_environment = TRUE)
+<<<<<<< HEAD
 	SEND_SIGNAL(H, COMSIG_ATOM_ENTERED, bag)
+=======
+	SEND_SIGNAL(H, COMSIG_HUMAN_ENTER_STORAGE, bag)
+>>>>>>> master
 	holding_bag = bag
 
 /obj/item/clothing/head/mob_holder/human/relaymove(mob/living/user, direction)
@@ -34,7 +38,11 @@
 
 /obj/item/clothing/head/mob_holder/human/release(del_on_release, display_messages)
 	if(held_mob)
+<<<<<<< HEAD
 		SEND_SIGNAL(held_mob, COMSIG_ATOM_EXIT, holding_bag)
+=======
+		SEND_SIGNAL(held_mob, COMSIG_HUMAN_EXIT_STORAGE, holding_bag)
+>>>>>>> master
 	..(TRUE, FALSE)
 
 /obj/item/clothing/head/mob_holder/human/on_found(mob/finder)

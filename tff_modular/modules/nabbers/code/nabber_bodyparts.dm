@@ -1,16 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define NABBER_PUNCH_LOW 3 // Humanoid pair of hands is extremely weak and deals reduced damage.
 #define NABBER_PUNCH_HIGH 5
 #define BODYPART_ICON_NABBER 'tff_modular/modules/nabbers/icons/bodyparts/nabber_parts_greyscale.dmi'
 #define NABBER_BRUTE_MODIFIER 0.8
 #define NABBER_BURN_MODIFIER 1.4
 =======
+=======
+>>>>>>> master
 #define NABBER_PUNCH_LOW 3 // Гуманоидная пара рук - слабая.
 #define NABBER_PUNCH_HIGH 5
 #define BODYPART_ICON_NABBER 'tff_modular/modules/nabbers/icons/bodyparts/nabber_parts_greyscale.dmi'
 #define NABBER_BRUTE_MODIFIER 0.7 // SHEE-E--E-E-E-E-E-ES, да это живые танки.
 #define NABBER_BURN_MODIFIER 1.2
+<<<<<<< HEAD
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+>>>>>>> master
 //Nabbers
 
 /obj/item/bodypart/head/mutant/nabber
@@ -20,9 +26,13 @@
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	head_flags = HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+	head_flags = HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES
+>>>>>>> master
 
 /obj/item/bodypart/head/mutant/nabber/Initialize(mapload)
 	worn_ears_offset = new(

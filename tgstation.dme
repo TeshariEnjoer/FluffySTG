@@ -7494,10 +7494,13 @@
 #include "modular_skyrat\modules\xenos_skyrat_redo\code\xeno_types\spitter.dm"
 #include "modular_skyrat\modules\xenos_skyrat_redo\code\xeno_types\warrior.dm"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "tff_modular\blueshield-rearm\code\blueshield-adv-weaponry.dm"
 #include "tff_modular\master_files\code\__DEFINES\nabber_clothing_paths.dm"
 #include "tff_modular\master_files\code\__HELPERS\names.dm"
 =======
+=======
+>>>>>>> master
 #include "tff_modular\master_files\code\datum\components\human_holder.dm"
 #include "tff_modular\master_files\code\datum\components\riding_mob.dm"
 #include "tff_modular\master_files\code\datum\components\weak_body.dm"
@@ -7509,7 +7512,10 @@
 #include "tff_modular\master_files\code\modules\mob\living\carbon\human\human_buckle.dm"
 #include "tff_modular\master_files\code\modules\mod\_module.dm"
 #include "tff_modular\master_files\code\modules\mod\mod_clothes.dm"
+<<<<<<< HEAD
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+>>>>>>> master
 #include "tff_modular\modules\autoaccent\code\autoaccent.dm"
 #include "tff_modular\modules\blueshield-mod\code.dm"
 #include "tff_modular\modules\blueshield-rearm\code\holster.dm"
@@ -7534,15 +7540,17 @@
 #include "tff_modular\modules\mcr_nerf_revert\code\mcr_override.dm"
 #include "tff_modular\modules\modular_automapper\automapper.dm"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "tff_modular\modules\nabbers\code\nabber_emotes.dm"
 #include "tff_modular\modules\nabbers\code\abilites\camuflage.dm"
 #include "tff_modular\modules\nabbers\code\abilites\nabber_combat.dm"
 #include "tff_modular\modules\nabbers\code\abilites\nabber_combat_effect.dm"
 #include "tff_modular\modules\nabbers\code\abilites\nabber_welding_eyes.dm"
 =======
+=======
+>>>>>>> master
 #include "tff_modular\modules\nabbers\code\_nabbers.dm"
 #include "tff_modular\modules\nabbers\code\nabber_bodyparts.dm"
-#include "tff_modular\modules\nabbers\code\nabber_emotes.dm"
 #include "tff_modular\modules\nabbers\code\nabber_organs.dm"
 #include "tff_modular\modules\nabbers\code\abilites\camouflage.dm"
 #include "tff_modular\modules\nabbers\code\abilites\nabber_combat_effect.dm"
@@ -7550,8 +7558,13 @@
 #include "tff_modular\modules\nabbers\code\abilites\nabber_welding_eyes.dm"
 #include "tff_modular\modules\nabbers\code\abilites\toggle_arms.dm"
 #include "tff_modular\modules\nabbers\code\GAGS\nabber_gags.dm"
+<<<<<<< HEAD
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+>>>>>>> master
 #include "tff_modular\modules\quirks\code\_quirk.dm"
+#include "tff_modular\modules\quirks\code\negative.dm"
+#include "tff_modular\modules\quirks\code\neutral.dm"
 #include "tff_modular\modules\redsec\code\vending.dm"
 #include "tff_modular\modules\redsec_reskins\beret_reskin.dm"
 #include "tff_modular\modules\redsec_reskins\hood_reskin.dm"
@@ -7565,6 +7578,7 @@
 #include "tff_modular\modules\toys\code\loadout_datum_toys.dm"
 #include "tff_modular\modules\toys\code\plushes.dm"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "tff_modular\modules\nabbers\code\_nabber.dm"
 #include "tff_modular\modules\nabbers\code\nabber_bodyparts.dm"
 #include "tff_modular\modules\nabbers\code\nabber_organs.dm"
@@ -7572,4 +7586,7 @@
 =======
 #include "tff_modular\modules\uplink_item\code\categories\stealthy_weapons.dm"
 >>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
+=======
+#include "tff_modular\modules\uplink_item\code\categories\stealthy_weapons.dm"
+>>>>>>> master
 // END_INCLUDE

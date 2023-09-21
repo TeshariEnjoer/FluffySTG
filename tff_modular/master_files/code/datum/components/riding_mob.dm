@@ -17,8 +17,13 @@
 
 /datum/component/riding/creature/human/vehicle_mob_unbuckle(datum/source, mob/living/former_rider, force = FALSE)
 	. = ..()
+<<<<<<< HEAD
 	former_rider.set_density(TRUE)
 	if((ride_check_flags & CARRIER_NEEDS_ARM) && HAS_TRAIT(former_rider, TRAIT_CAN_BUCKLED_TO_HAND))
+=======
+	if((ride_check_flags & CARRIER_NEEDS_ARM) && HAS_TRAIT(former_rider, TRAIT_CAN_BUCKLED_TO_HAND))
+		former_rider.set_density(TRUE)
+>>>>>>> master
 		REMOVE_TRAIT(former_rider, TRAIT_UNDENSE, VEHICLE_TRAIT)
 
 //Хэндлинг положения в руке

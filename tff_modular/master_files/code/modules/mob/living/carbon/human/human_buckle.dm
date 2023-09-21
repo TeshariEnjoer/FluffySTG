@@ -3,10 +3,13 @@
 	if(pulling != M || grab_state != GRAB_AGGRESSIVE || stat != CONSCIOUS)
 		return FALSE
 
+<<<<<<< HEAD
 	//Если мы на ком-либо закреплены, не даем взять никакого в свои руки..
 	if(buckled)
 		return FALSE
 
+=======
+>>>>>>> master
 	if(can_buckle_to_hand(M))
 		buckle_to_hand_mob(M)
 		return TRUE
@@ -35,7 +38,11 @@
 
 /mob/living/carbon/human/proc/buckle_to_hand_mob(mob/living/carbon/target)
 	if(!can_buckle_to_hand(target) || incapacitated(IGNORE_GRAB))
+<<<<<<< HEAD
 		to_chat(src, span_warning("You can't lift [target] to hand while [target.p_they()] [target.p_are()] standing!"))
+=======
+		to_chat(src, span_warning("You can't lift to hand [target] while [target.p_they()] [target.p_are()] standing!"))
+>>>>>>> master
 		return
 
 	var/carrydelay = 3 SECONDS
@@ -47,11 +54,19 @@
 	visible_message(span_notice("[src] starts lifting [target] onto their hand..."),
 		span_notice("You start to lift [target] onto your hand..."))
 	if(!do_after(src, carrydelay, target))
+<<<<<<< HEAD
 		visible_message(span_warning("[src] fails to lift [target] to hand!"))
 		return
 
 	if(!can_buckle_to_hand(target) || incapacitated(IGNORE_GRAB) || target.buckled)
 		visible_message(span_warning("[src] fails to lift [target] to hand!"))
+=======
+		visible_message(span_warning("[src] fails to lift to hand [target]!"))
+		return
+
+	if(!can_buckle_to_hand(target) || incapacitated(IGNORE_GRAB) || target.buckled)
+		visible_message(span_warning("[src] fails to lift to hand [target]!"))
+>>>>>>> master
 		return
 
 	target.drop_all_held_items()

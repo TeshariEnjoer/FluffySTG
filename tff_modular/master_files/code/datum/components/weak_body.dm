@@ -46,7 +46,11 @@
 	if(block_grab)
 		RegisterSignal(parent, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(upgrade_grab), override = TRUE)
 		RegisterSignal(parent, COMSIG_LIVING_START_PULL, PROC_REF(pull_act), override = TRUE)
+<<<<<<< HEAD
 		RegisterSignal(parent, COMSIG_ATOM_NO_LONGER_PULLING, PROC_REF(stop_pull_act), override = TRUE)
+=======
+
+>>>>>>> master
 
 // Проверяем надет ли и включен на пользователе МОД костюм.
 /datum/component/weak_body/proc/check_mod()
@@ -126,6 +130,7 @@
 			victim.visible_message(span_notice("[victim.name] start pulling [o], but [o.name] too heavy for [victim.p_their()]"), span_danger("You start pulling [o.name], but it too heavy for you!"))
 			return
 
+<<<<<<< HEAD
 	if(ishuman(pulled))
 		if(!victim.has_movespeed_modifier(/datum/movespeed_modifier/teshari_pull))
 			victim.add_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
@@ -152,6 +157,22 @@
 /datum/component/weak_body/proc/upgrade_grab(mob/user, new_state)
 	SIGNAL_HANDLER
 	if(!user.pulling || new_state == 0)
+=======
+	if(ishuman(pulled) && (state >= GRAB_AGGRESSIVE))
+		// Если мы антагонист, то мы можем превозмочь рассовые сложности.
+		if(check_antagonists() || check_mod())
+			return
+		var/mob/living/carbon/human/h = pulled
+		if(HAS_TRAIT(h, TRAIT_WEAK_BODY))
+			return
+		victim.visible_message(span_notice("[victim.name] grabed [h.name], but [h.p_they()] too heavy for [victim.p_their()]"), span_danger("You start pulling [h.name], but [h.p_they()] too heavy for you!"))
+		victim.stop_pulling()
+		victim.grab_state = 0
+
+/datum/component/weak_body/proc/upgrade_grab(mob/user, new_state)
+	SIGNAL_HANDLER
+	if(!user.pulling)
+>>>>>>> master
 		return
 	addtimer(CALLBACK(src, PROC_REF(pull_act), user, user.pulling, new_state), 5)
 
@@ -183,7 +204,11 @@
 
 	victim.Knockdown((weapon.weapon_weight * 2) SECONDS)
 	victim.Paralyze(weapon.weapon_weight SECONDS)
+<<<<<<< HEAD
 	victim.visible_message(span_warning("[victim.name] shoots from [weapon.name], but the recoil is so strong it knocks [victim.p_they()] backwards!"), span_danger("The violent recoil sends you flying backwards!"))
+=======
+	victim.visible_message(span_warning("[victim.name] shoot from [weapon.name], but the recoil was so strong it knocked [victim.p_they()] backwards!"), span_danger("The violent recoil sent you flying backwards!"))
+>>>>>>> master
 	victim.throw_at(knockdown_target, knockdown_range, weapon.weapon_weight)
 
 /datum/component/weak_body/proc/after_gun_fired(obj/item/gun/weapon)
@@ -196,12 +221,18 @@
 	SIGNAL_HANDLER
 	if(!ismob(target))
 		return
+<<<<<<< HEAD
 	var/mob/living/carbon/human/victim = parent
 	var/obj/item/inactive = victim.get_inactive_held_item()
 	//Проверяем что мы были рядом с целью.
 	var/distance = get_dist_euclidian(victim, target)
 	if(distance > 1)
 		return
+=======
+
+	var/mob/living/carbon/human/victim = parent
+	var/obj/item/inactive = victim.get_inactive_held_item()
+>>>>>>> master
 
 	if(!istype(inactive, /obj/item/offhand))
 		return
@@ -209,6 +240,7 @@
 	if(check_antagonists() || check_mod() || HAS_TRAIT(parent, TRAIT_NEGATES_GRAVITY))
 		return
 
+<<<<<<< HEAD
 	victim.visible_message(span_danger("[victim.name] falls after attacking [target], [weapon.name] is too heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] is too heavy for you."))
 	victim.Knockdown(3 SECONDS)
 	victim.Stun(2 SECONDS)
@@ -216,3 +248,8 @@
 /datum/movespeed_modifier/teshari_pull
 	blacklisted_movetypes = FLYING
 	multiplicative_slowdown = 0.9
+=======
+	victim.visible_message(span_danger("[victim.name] fall aftet attack [target], [weapon.name] too heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] too heavy for you."))
+	victim.Knockdown(3 SECONDS)
+	victim.Stun(2 SECONDS)
+>>>>>>> master
