@@ -271,7 +271,7 @@ SUBSYSTEM_DEF(shuttle)
 
 /datum/controller/subsystem/shuttle/proc/block_recall(lockout_timer)
 	if(admin_emergency_no_recall)
-		priority_announce("Error!", "Emergency Shuttle Uplink Alert", 'sound/misc/announce_dig.ogg')
+		priority_announce("Error!", "Emergency Shuttle Uplink Alert", ANNOUNCER_SHUTTLE) // SKYRAT EDIT CHANGE - Announcer Sounds
 		addtimer(CALLBACK(src, PROC_REF(unblock_recall)), lockout_timer)
 		return
 	emergency_no_recall = TRUE
@@ -279,7 +279,7 @@ SUBSYSTEM_DEF(shuttle)
 
 /datum/controller/subsystem/shuttle/proc/unblock_recall()
 	if(admin_emergency_no_recall)
-		priority_announce("Error!", "Emergency Shuttle Uplink Alert", 'sound/misc/announce_dig.ogg')
+		priority_announce("Error!", "Emergency Shuttle Uplink Alert", ANNOUNCER_SHUTTLE) // SKYRAT EDIT CHANGE - Announcer Sounds
 		return
 	emergency_no_recall = FALSE
 
@@ -805,9 +805,9 @@ SUBSYSTEM_DEF(shuttle)
 	hidden_shuttle_turf_images -= remove_images
 	hidden_shuttle_turf_images += add_images
 
-	for(var/V in GLOB.navigation_computers)
-		var/obj/machinery/computer/camera_advanced/shuttle_docker/C = V
-		C.update_hidden_docking_ports(remove_images, add_images)
+	for(var/obj/machinery/computer/camera_advanced/shuttle_docker/docking_computer \
+		as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/computer/camera_advanced/shuttle_docker))
+		docking_computer.update_hidden_docking_ports(remove_images, add_images)
 
 	QDEL_LIST(remove_images)
 
@@ -938,6 +938,8 @@ SUBSYSTEM_DEF(shuttle)
 	if(preview_shuttle)
 		preview_shuttle.jumpToNullSpace()
 	preview_shuttle = null
+	if(preview_reservation)
+		QDEL_NULL(preview_reservation)
 
 /datum/controller/subsystem/shuttle/ui_state(mob/user)
 	return GLOB.admin_state

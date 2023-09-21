@@ -3,6 +3,10 @@
 
 /obj/item
 	var/datum/greyscale_config/greyscale_config_worn_nabber_fallback
+<<<<<<< HEAD
+=======
+	var/icon/worn_icon_nabber
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 
 /datum/species/nabber/get_custom_worn_icon(item_slot, obj/item/item)
 	return item.worn_icon_nabber

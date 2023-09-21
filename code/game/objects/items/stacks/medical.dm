@@ -12,7 +12,7 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 40
 	novariants = FALSE
-	item_flags = NOBLUDGEON
+	item_flags = NOBLUDGEON|SKIP_FANTASY_ON_SPAWN
 	cost = 250
 	source = /datum/robot_energy_storage/medical
 	merge_type = /obj/item/stack/medical
@@ -36,6 +36,28 @@
 /obj/item/stack/medical/attack(mob/living/patient, mob/user)
 	. = ..()
 	try_heal(patient, user)
+
+/obj/item/stack/medical/apply_fantasy_bonuses(bonus)
+	. = ..()
+	if(heal_brute)
+		heal_brute = modify_fantasy_variable("heal_brute", heal_brute, bonus)
+	if(heal_burn)
+		heal_burn = modify_fantasy_variable("heal_burn", heal_burn, bonus)
+	if(stop_bleeding)
+		stop_bleeding = modify_fantasy_variable("stop_bleeding", stop_bleeding, bonus/10)
+	if(sanitization)
+		sanitization = modify_fantasy_variable("sanitization", sanitization, bonus/10)
+	if(flesh_regeneration)
+		flesh_regeneration = modify_fantasy_variable("flesh_regeneration", flesh_regeneration, bonus/10)
+
+/obj/item/stack/medical/remove_fantasy_bonuses(bonus)
+	heal_brute = reset_fantasy_variable("heal_brute", heal_brute)
+	heal_burn = reset_fantasy_variable("heal_burn", heal_burn)
+	stop_bleeding = reset_fantasy_variable("stop_bleeding", stop_bleeding)
+	sanitization = reset_fantasy_variable("sanitization", sanitization)
+	flesh_regeneration = reset_fantasy_variable("flesh_regeneration", flesh_regeneration)
+	return ..()
+
 
 /// In which we print the message that we're starting to heal someone, then we try healing them. Does the do_after whether or not it can actually succeed on a targeted mob
 /obj/item/stack/medical/proc/try_heal(mob/living/patient, mob/user, silent = FALSE)
@@ -64,10 +86,6 @@
 		patient.balloon_alert(user, "they're dead!")
 		return
 	if(isanimal_or_basicmob(patient) && heal_brute) // only brute can heal
-		var/mob/living/simple_animal/critter = patient
-		if (istype(critter) && !critter.healable)
-			patient.balloon_alert(user, "won't work!")
-			return FALSE
 		if (!(patient.mob_biotypes & MOB_ORGANIC))
 			patient.balloon_alert(user, "can't fix that!")
 			return FALSE
@@ -88,7 +106,7 @@
 		patient.balloon_alert(user, "no [parse_zone(user.zone_selected)]!")
 		return FALSE
 	if(!IS_ORGANIC_LIMB(affecting)) //Limb must be organic to be healed - RR
-		patient.balloon_alert(user, "it's mechanical!")
+		patient.balloon_alert(user, "it's not organic!")
 		return FALSE
 	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
 		user.visible_message(
@@ -126,8 +144,7 @@
 
 /obj/item/stack/medical/gauze
 	name = "medical gauze"
-	//desc = "A roll of elastic cloth, perfect for stabilizing all kinds of wounds, from cuts and burns, to broken bones. " //ORIGINAL
-	desc = "A roll of elastic cloth, perfect for stabilizing all kinds of slashes, punctures and burns. " //SKYRAT EDIT CHANGE - MEDICAL
+	desc = "A roll of elastic cloth, perfect for stabilizing all kinds of wounds, from cuts and burns, to broken bones. "
 	gender = PLURAL
 	singular_name = "medical gauze"
 	icon_state = "gauze"
@@ -142,10 +159,12 @@
 	splint_factor = 0.7
 	burn_cleanliness_bonus = 0.35
 	merge_type = /obj/item/stack/medical/gauze
-	var/gauze_type = /datum/bodypart_aid/gauze //SKYRAT EDIT ADDITION - MEDICAL
 
 // gauze is only relevant for wounds, which are handled in the wounds themselves
 /obj/item/stack/medical/gauze/try_heal(mob/living/patient, mob/user, silent)
+
+	var/treatment_delay = (user == patient ? self_delay : other_delay)
+
 	var/obj/item/bodypart/limb = patient.get_bodypart(check_zone(user.zone_selected))
 	if(!limb)
 		patient.balloon_alert(user, "missing limb!")
@@ -155,8 +174,9 @@
 		return
 
 	var/gauzeable_wound = FALSE
+	var/datum/wound/woundies
 	for(var/i in limb.wounds)
-		var/datum/wound/woundies = i
+		woundies = i
 		if(woundies.wound_flags & ACCEPTS_GAUZE)
 			gauzeable_wound = TRUE
 			break
@@ -164,19 +184,20 @@
 		patient.balloon_alert(user, "can't heal those!")
 		return
 
-	//SKYRAT EDIT CHANGE BEGIN - MEDICAL
-	/*
 	if(limb.current_gauze && (limb.current_gauze.absorption_capacity * 1.2 > absorption_capacity)) // ignore if our new wrap is < 20% better than the current one, so someone doesn't bandage it 5 times in a row
-		patient.balloon_alert(user, "already bandaged!")
+		patient.balloon_alert(user, pick("already bandaged!", "bandage is clean!")) // good enough
 		return
-	*/
-	if(limb.current_gauze)
-		balloon_alert(user, "already bandaged!")
-		return
-	//SKYRAT EDIT CHANGE END
 
-	user.visible_message(span_warning("[user] begins wrapping the wounds on [patient]'s [limb.plaintext_zone] with [src]..."), span_warning("You begin wrapping the wounds on [user == patient ? "your" : "[patient]'s"] [limb.plaintext_zone] with [src]..."))
-	if(!do_after(user, (user == patient ? self_delay : other_delay), target=patient))
+	if(HAS_TRAIT(woundies, TRAIT_WOUND_SCANNED))
+		treatment_delay *= 0.5
+		if(user == patient)
+			to_chat(user, span_notice("You keep in mind the indications from the holo-image about your injury, and expertly begin wrapping your wounds with [src]."))
+		else
+			user.visible_message(span_warning("[user] begins expertly wrapping the wounds on [patient]'s [limb.plaintext_zone] with [src]..."), span_warning("You begin quickly wrapping the wounds on [patient]'s [limb.plaintext_zone] with [src], keeping the holo-image indications in mind..."))
+	else
+		user.visible_message(span_warning("[user] begins wrapping the wounds on [patient]'s [limb.plaintext_zone] with [src]..."), span_warning("You begin wrapping the wounds on [user == patient ? "your" : "[patient]'s"] [limb.plaintext_zone] with [src]..."))
+
+	if(!do_after(user, treatment_delay, target = patient))
 		return
 
 	user.visible_message("<span class='infoplain'><span class='green'>[user] applies [src] to [patient]'s [limb.plaintext_zone].</span></span>", "<span class='infoplain'><span class='green'>You bandage the wounds on [user == patient ? "your" : "[patient]'s"] [limb.plaintext_zone].</span></span>")
@@ -217,7 +238,6 @@
 	absorption_rate = 0.075
 	absorption_capacity = 4
 	merge_type = /obj/item/stack/medical/gauze/improvised
-	gauze_type = /datum/bodypart_aid/gauze/improvised //SKYRAT EDIT ADDITION - MEDICAL
 
 	/*
 	The idea is for the following medical devices to work like a hybrid of the old brute packs and tend wounds,
@@ -395,6 +415,9 @@
 	novariants = TRUE
 	merge_type = /obj/item/stack/medical/bone_gel
 
+/obj/item/stack/medical/bone_gel/get_surgery_tool_overlay(tray_extended)
+	return "gel" + (tray_extended ? "" : "_out")
+
 /obj/item/stack/medical/bone_gel/attack(mob/living/patient, mob/user)
 	patient.balloon_alert(user, "no fractures!")
 	return
@@ -411,9 +434,9 @@
 	patient.emote("scream")
 	for(var/i in patient.bodyparts)
 		var/obj/item/bodypart/bone = i
-		var/datum/wound/blunt/severe/oof_ouch = new
+		var/datum/wound/blunt/bone/severe/oof_ouch = new
 		oof_ouch.apply_wound(bone, wound_source = "bone gel")
-		var/datum/wound/blunt/critical/oof_OUCH = new
+		var/datum/wound/blunt/bone/critical/oof_OUCH = new
 		oof_OUCH.apply_wound(bone, wound_source = "bone gel")
 
 	for(var/i in patient.bodyparts)

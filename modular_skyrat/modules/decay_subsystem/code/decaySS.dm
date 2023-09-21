@@ -23,7 +23,7 @@ SUBSYSTEM_DEF(decay)
 	init_order = INIT_ORDER_DECAY
 
 	/// This is used to determine what maps we should not spawn on.
-	var/list/station_filter = list("Birdshot Station", "Runtime Station", "MultiZ Debug")
+	var/list/station_filter = list("Birdshot Station", "Runtime Station", "MultiZ Debug", "Gateway Test")
 	var/list/possible_turfs = list()
 	var/list/possible_areas = list()
 	var/severity_modifier = 1
@@ -47,7 +47,7 @@ SUBSYSTEM_DEF(decay)
 		return SS_INIT_NO_NEED
 
 	// Putting this first so that it just doesn't waste time iterating through everything if it's not going to do anything anyway.
-	if(prob(50))
+	if(prob(85))
 		message_admins("SSDecay will not interact with this round.")
 		log_world("SSDecay will not interact with this round.")
 		return SS_INIT_NO_NEED

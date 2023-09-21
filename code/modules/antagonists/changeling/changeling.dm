@@ -11,6 +11,8 @@
 	hijack_speed = 0.5
 	ui_name = "AntagInfoChangeling"
 	suicide_cry = "FOR THE HIVE!!"
+	can_assign_self_objectives = TRUE
+	default_custom_objective = "Consume the station's most valuable genomes."
 	/// Whether to give this changeling objectives or not
 	var/give_objectives = TRUE
 	/// Weather we assign objectives which compete with other lings
@@ -62,7 +64,7 @@
 	/// A reference to our cellular emporium datum.
 	var/datum/cellular_emporium/cellular_emporium
 	/// A reference to our cellular emporium action (which opens the UI for the datum).
-	var/datum/action/innate/cellular_emporium/emporium_action
+	var/datum/action/cellular_emporium/emporium_action
 
 	/// UI displaying how many chems we have
 	var/atom/movable/screen/ling/chems/lingchemdisplay
@@ -145,7 +147,7 @@
 	create_initial_profile()
 	if(give_objectives)
 		forge_objectives()
-	owner.current.grant_all_languages(FALSE, FALSE, TRUE) //Grants omnitongue. We are able to transform our body after all.
+	owner.current.get_language_holder().omnitongue = TRUE
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ling_alert.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 	return ..()
 
@@ -165,12 +167,10 @@
 	if(living_mob.hud_used)
 		var/datum/hud/hud_used = living_mob.hud_used
 
-		lingchemdisplay = new /atom/movable/screen/ling/chems()
-		lingchemdisplay.hud = hud_used
+		lingchemdisplay = new /atom/movable/screen/ling/chems(null, hud_used)
 		hud_used.infodisplay += lingchemdisplay
 
-		lingstingdisplay = new /atom/movable/screen/ling/sting()
-		lingstingdisplay.hud = hud_used
+		lingstingdisplay = new /atom/movable/screen/ling/sting(null, hud_used)
 		hud_used.infodisplay += lingstingdisplay
 
 		hud_used.show_hud(hud_used.hud_version)
@@ -204,12 +204,10 @@
 
 	var/datum/hud/ling_hud = owner.current.hud_used
 
-	lingchemdisplay = new
-	lingchemdisplay.hud = ling_hud
+	lingchemdisplay = new(null, ling_hud)
 	ling_hud.infodisplay += lingchemdisplay
 
-	lingstingdisplay = new
-	lingstingdisplay.hud = ling_hud
+	lingstingdisplay = new(null, ling_hud)
 	ling_hud.infodisplay += lingstingdisplay
 
 	ling_hud.show_hud(ling_hud.hud_version)
@@ -251,11 +249,11 @@
 
 /*
  * Instantiate all the default actions of a ling (transform, dna sting, absorb, etc)
- * Any Changeling action with `dna_cost == 0` will be added here automatically
+ * Any Changeling action with dna_cost = CHANGELING_POWER_INNATE will be added here automatically
  */
 /datum/antagonist/changeling/proc/create_innate_actions()
 	for(var/datum/action/changeling/path as anything in all_powers)
-		if(initial(path.dna_cost) != 0)
+		if(initial(path.dna_cost) != CHANGELING_POWER_INNATE)
 			continue
 
 		var/datum/action/changeling/innate_ability = new path()
@@ -381,8 +379,8 @@
  * [sting_path] - the power that's being purchased / evolved.
  */
 /datum/antagonist/changeling/proc/purchase_power(datum/action/changeling/sting_path)
-	if(!ispath(sting_path))
-		CRASH("Changeling purchase_power attempted to purchase an invalid typepath!")
+	if(!ispath(sting_path, /datum/action/changeling))
+		CRASH("Changeling purchase_power attempted to purchase an invalid typepath! (got: [sting_path])")
 
 	if(purchased_powers[sting_path])
 		to_chat(owner.current, span_warning("We have already evolved this ability!"))
@@ -504,7 +502,7 @@
 		if(verbose)
 			to_chat(user, span_warning("We already have this DNA in storage!"))
 		return FALSE
-	if(NO_DNA_COPY in target.dna.species?.species_traits)
+	if(HAS_TRAIT(target, TRAIT_NO_DNA_COPY))
 		if(verbose)
 			to_chat(user, span_warning("[target] is not compatible with our biology."))
 		return FALSE
@@ -682,10 +680,6 @@
 	add_new_profile(owner.current)
 
 /datum/antagonist/changeling/forge_objectives()
-	//OBJECTIVES - random traitor objectives. Unique objectives "steal brain" and "identity theft".
-	//No escape alone because changelings aren't suited for it and it'd probably just lead to rampant robusting
-	//If it seems like they'd be able to do it in play, add a 10% chance to have to escape alone
-
 	var/escape_objective_possible = TRUE
 
 	switch(competitive_objectives ? rand(1,3) : 1)
@@ -830,8 +824,7 @@
 	chosen_dna.transfer_identity(user, TRUE)
 
 	for(var/obj/item/bodypart/limb as anything in user.bodyparts)
-		if(IS_ORGANIC_LIMB(limb))
-			limb.update_limb(is_creating = TRUE)
+		limb.update_limb(is_creating = TRUE)
 
 	user.updateappearance(mutcolor_update = TRUE, eyeorgancolor_update = TRUE) // SKYRAT EDIT
 	user.domutcheck()
@@ -919,7 +912,7 @@
 			flesh_id.hud_icon = chosen_profile.id_icon
 
 		if(equip)
-			user.equip_to_slot_or_del(new_flesh_item, slot2slot[slot])
+			user.equip_to_slot_or_del(new_flesh_item, slot2slot[slot], indirect_action = TRUE)
 			if(!QDELETED(new_flesh_item))
 				ADD_TRAIT(new_flesh_item, TRAIT_NODROP, CHANGELING_TRAIT)
 
@@ -1081,11 +1074,9 @@
 		for(var/datum/objective/objective in objectives)
 			// SKYRAT EDIT START - No greentext
 			/*
-			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_greentext("Success!</b>")]"
-			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_redtext("Fail.")]"
+			if(!objective.check_completion())
 				changeling_win = FALSE
+			parts += "<b>Objective #[count]</b>: [objective.explanation_text] [objective.get_roundend_success_suffix()]"
 			*/
 			parts += "<b>Objective #[count]</b>: [objective.explanation_text]"
 			// SKYRAT EDIT END - No greentext

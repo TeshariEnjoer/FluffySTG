@@ -368,18 +368,6 @@
 "bs" = (
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/research)
-"bt" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/light/directional/north,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/research)
 "bu" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/effect/decal/cleanable/blood/old,
@@ -446,14 +434,18 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/research)
 "bG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 4;
+	pixel_y = 8
+	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post)
+/area/awaymission/snowdin/post/engineering)
 "bH" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
 	dir = 4;
@@ -870,23 +862,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/kitchen)
-"cM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/box{
-	illustration = "donk_kit";
-	name = "box of donkpockets"
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/kitchen)
 "cN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
 	dir = 10
@@ -1234,6 +1209,13 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
+"dF" = (
+/obj/machinery/door/airlock/external/glass/ruin,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "dG" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating,
@@ -1283,23 +1265,6 @@
 	},
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/kitchen)
-"dS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/box{
-	illustration = "donk_kit";
-	name = "box of donkpockets"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "dT" = (
@@ -1354,6 +1319,13 @@
 /obj/item/paper_bin,
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
+"ec" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/dorm)
 "ed" = (
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -1365,13 +1337,6 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
-"ef" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "eh" = (
 /obj/structure/bed,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -1525,6 +1490,12 @@
 	pixel_y = 5
 	},
 /turf/open/floor/carpet,
+/area/awaymission/snowdin/post/dorm)
+"eQ" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "eR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
@@ -1721,12 +1692,26 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/snowdin/outside)
+"fq" = (
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "fr" = (
 /turf/open/lava/plasma,
 /area/awaymission/snowdin/cave/cavern)
 "fs" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
 /turf/open/floor/carpet,
+/area/awaymission/snowdin/post/dorm)
+"ft" = (
+/obj/structure/sign/poster/official/no_erp/directional/west,
+/obj/machinery/holopad,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "fu" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
@@ -1855,6 +1840,12 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/hydro)
+"fU" = (
+/obj/machinery/conveyor{
+	id = "snowdin_belt_mine"
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "fV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	piping_layer = 4;
@@ -1911,6 +1902,19 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/cave)
+"gg" = (
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "gh" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
 	piping_layer = 4;
@@ -2270,6 +2274,9 @@
 /obj/item/clothing/shoes/winterboots,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
+"hf" = (
+/turf/open/floor/plating/elevatorshaft,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "hg" = (
 /obj/item/shard,
 /obj/effect/turf_decal/tile/blue/opposingcorners{
@@ -2440,6 +2447,21 @@
 	},
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
+"hK" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+	dir = 4;
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/dorm)
 "hL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
 	dir = 4;
@@ -2561,8 +2583,8 @@
 /area/awaymission/snowdin/post/hydro)
 "hZ" = (
 /obj/item/gun/ballistic/rifle/boltaction,
-/obj/item/ammo_box/a762,
-/obj/item/ammo_box/a762,
+/obj/item/ammo_box/strilka310,
+/obj/item/ammo_box/strilka310,
 /obj/structure/closet/secure_closet{
 	icon_state = "sec";
 	name = "security officer's locker";
@@ -3015,13 +3037,6 @@
 	},
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/cave)
-"jc" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/cavern1)
 "je" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
@@ -3077,6 +3092,12 @@
 "jm" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
+/area/awaymission/snowdin/post)
+"jn" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "jo" = (
 /obj/effect/mapping_helpers/broken_floor,
@@ -3306,6 +3327,13 @@
 "jR" = (
 /turf/closed/wall/rust,
 /area/awaymission/snowdin/post/custodials)
+"jT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post)
 "jU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -3442,13 +3470,6 @@
 /obj/item/tank/internals/plasma,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
-"ko" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/dorm)
 "kr" = (
 /obj/structure/fence{
 	dir = 4
@@ -3546,12 +3567,12 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
-"kD" = (
-/obj/effect/turf_decal/tile/neutral{
+"kF" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_main)
+/area/awaymission/snowdin/post)
 "kG" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -3684,6 +3705,14 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
+"la" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "lb" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
@@ -4210,6 +4239,22 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
+"md" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+	dir = 4;
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post)
 "me" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
 	dir = 1;
@@ -4879,24 +4924,6 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
-"oq" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 8;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/structure/table,
-/obj/item/stack/sheet/glass/fifty{
-	pixel_x = 1;
-	pixel_y = -1
-	},
-/obj/item/stack/sheet/iron/fifty{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/engineering)
 "or" = (
 /obj/structure/table,
 /obj/item/cultivator,
@@ -5119,6 +5146,13 @@
 /obj/structure/cable,
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/engineering)
+"oZ" = (
+/obj/machinery/conveyor{
+	dir = 10;
+	id = "snowdin_belt_mine"
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "pa" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/cavern2)
@@ -5132,11 +5166,6 @@
 /obj/item/pen,
 /turf/open/floor/iron/grimy,
 /area/awaymission/snowdin/post/cavern2)
-"pc" = (
-/obj/structure/spider/stickyweb,
-/mob/living/basic/giant_spider/hunter/ice,
-/turf/open/misc/asteroid/snow/ice,
-/area/awaymission/snowdin/cave/cavern)
 "pd" = (
 /obj/structure/bed,
 /turf/open/floor/iron/grimy,
@@ -5187,6 +5216,15 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
+"pp" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+	dir = 5
+	},
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post)
 "pq" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
 	dir = 4
@@ -5257,20 +5295,6 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/awaymission/snowdin/post/engineering)
-"py" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/machinery/light/directional/east,
-/obj/structure/table,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/obj/item/storage/toolbox/electrical{
-	pixel_x = 4;
-	pixel_y = 8
-	},
-/turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "pz" = (
 /obj/structure/rack,
@@ -5798,6 +5822,11 @@
 /obj/structure/table,
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/cavern2)
+"rj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "rk" = (
 /obj/structure/rack,
 /turf/open/floor/plating,
@@ -6039,6 +6068,14 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern2)
+"se" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post)
 "sf" = (
 /obj/machinery/computer/monitor,
 /obj/structure/cable,
@@ -6110,6 +6147,14 @@
 	},
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/cave/cavern)
+"sr" = (
+/obj/structure/plasticflaps,
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "snowdin_belt_mine"
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "ss" = (
 /obj/structure/cable,
 /turf/open/floor/engine/cult,
@@ -6130,6 +6175,17 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern2)
+"sv" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"sx" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "sz" = (
 /obj/machinery/door/poddoor{
 	id = "snowdinturbinegas";
@@ -6198,6 +6254,12 @@
 	},
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/outside)
+"sL" = (
+/obj/machinery/door/airlock/maintenance,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "sO" = (
 /obj/structure/fence{
 	dir = 4
@@ -6350,10 +6412,22 @@
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/cave/cavern)
+"tx" = (
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "tz" = (
 /mob/living/simple_animal/hostile/skeleton/ice,
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/cave/cavern)
+"tD" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "tE" = (
 /turf/closed/indestructible/rock/snow,
 /area/awaymission/snowdin/cave)
@@ -6368,6 +6442,15 @@
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/cave/cavern)
+"tS" = (
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"tV" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "tY" = (
 /turf/closed/wall,
 /area/awaymission/snowdin/post/cavern1)
@@ -6427,6 +6510,31 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern1)
+"ut" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8;
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/structure/table,
+/obj/item/stack/sheet/glass/fifty{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/obj/item/stack/sheet/iron/fifty{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/engineering)
+"ux" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/cavern1)
 "uz" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
@@ -6453,6 +6561,12 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern1)
+"uE" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/cavern1)
 "uF" = (
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
@@ -6463,6 +6577,10 @@
 "uI" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/cavern1)
+"uJ" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "uK" = (
 /obj/structure/cable,
 /mob/living/simple_animal/hostile/skeleton/plasmaminer,
@@ -6486,6 +6604,11 @@
 /obj/effect/spawner/structure/electrified_grille,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern1)
+"uP" = (
+/obj/machinery/holopad,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "uS" = (
 /mob/living/simple_animal/hostile/skeleton/plasmaminer,
 /obj/effect/mapping_helpers/broken_floor,
@@ -6535,6 +6658,13 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/awaymission/snowdin/post/cavern1)
+"vc" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
 /area/awaymission/snowdin/post/cavern1)
 "vd" = (
 /obj/structure/cable,
@@ -6635,6 +6765,15 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
+"vz" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "vA" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
 /turf/closed/wall/ice,
@@ -6669,6 +6808,15 @@
 	},
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/post/cavern1)
+"vH" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "vL" = (
 /turf/closed/wall/mineral/titanium,
 /area/awaymission/snowdin/post/broken_shuttle)
@@ -6681,6 +6829,14 @@
 /obj/effect/baseturf_helper/asteroid/snow,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/broken_shuttle)
+"vQ" = (
+/obj/structure/ore_box,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "vR" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium,
@@ -6742,6 +6898,24 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/cave)
+"wx" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"wz" = (
+/obj/machinery/door/airlock/mining/glass{
+	name = "Mining Dock"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/supply/mining,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"wB" = (
+/obj/machinery/computer/monitor,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "wD" = (
 /turf/closed/wall,
 /area/awaymission/snowdin/post/mining_dock)
@@ -6886,6 +7060,14 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
+"xo" = (
+/mob/living/basic/mining/basilisk,
+/turf/open/misc/asteroid/snow{
+	floor_variance = 0;
+	icon_state = "snow_dug";
+	slowdown = 1
+	},
+/area/awaymission/snowdin/cave/mountain)
 "xp" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
@@ -6896,6 +7078,13 @@
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/misc/asteroid/snow/ice,
 /area/awaymission/snowdin/post/cavern1)
+"xr" = (
+/obj/effect/baseturf_helper/asteroid/snow{
+	baseturf = /turf/open/misc/asteroid/snow/ice;
+	name = "asteroid snowice baseturf editor"
+	},
+/turf/closed/wall/ice,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "xs" = (
 /obj/item/gun/energy/e_gun{
 	dead_cell = 1
@@ -7026,6 +7215,11 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
+"xK" = (
+/obj/item/disk/holodisk/snowdin/ripjacob,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "xL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
 	dir = 8
@@ -7050,6 +7244,20 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_dock)
+"xP" = (
+/obj/item/shard,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"xQ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_dock)
 "xS" = (
 /obj/machinery/power/port_gen/pacman,
@@ -7087,6 +7295,15 @@
 "xW" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/mining_dock)
+"xX" = (
+/obj/machinery/door/firedoor,
+/obj/structure/grille/broken,
+/obj/item/stack/rods{
+	amount = 2
+	},
+/obj/item/shard,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "xY" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
@@ -7245,6 +7462,16 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
+"yC" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_dock)
 "yD" = (
 /obj/structure/fence{
 	pixel_x = 16
@@ -7367,6 +7594,10 @@
 	},
 /turf/open/floor/engine/plasma,
 /area/awaymission/snowdin/cave)
+"zb" = (
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "zc" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
 	dir = 8
@@ -7392,6 +7623,12 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
+"zg" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "zj" = (
 /obj/effect/turf_decal/stripes/corner,
 /obj/structure/fence/corner{
@@ -7487,6 +7724,14 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/snowdin/igloo)
+"zF" = (
+/obj/machinery/airalarm/directional/north,
+/obj/structure/sign/warning/docking/directional/east,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "zG" = (
 /obj/machinery/space_heater,
 /obj/structure/cable,
@@ -7533,12 +7778,6 @@
 /obj/structure/rack,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
-"zO" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/cavern1)
 "zQ" = (
 /obj/item/hatchet{
 	pixel_x = 4;
@@ -7694,6 +7933,12 @@
 /obj/machinery/door/airlock/external/glass/ruin,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/minipost)
+"Aw" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/minipost)
 "Ax" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -7742,7 +7987,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/minipost)
 "AG" = (
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/post/minipost)
 "AH" = (
@@ -7805,6 +8050,10 @@
 /obj/item/stack/sheet/iron,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/post/minipost)
+"AS" = (
+/mob/living/basic/migo,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "AU" = (
 /obj/effect/light_emitter{
 	name = "outdoor light";
@@ -8141,6 +8390,12 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
+"Ci" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Cj" = (
 /obj/structure/fence{
 	dir = 4
@@ -8155,6 +8410,13 @@
 "Cl" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/cave/cavern)
+"Cs" = (
+/obj/structure/closet/crate/preopen,
+/obj/item/storage/toolbox/emergency,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Ct" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/awaymission/snowdin/outside)
@@ -8166,10 +8428,23 @@
 /obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
+"Cw" = (
+/obj/machinery/light/small/directional/south,
+/obj/structure/sign/nanotrasen{
+	pixel_y = -32
+	},
+/turf/open/misc/asteroid/snow/ice,
+/area/awaymission/snowdin/cave/cavern)
 "Cx" = (
 /obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
+"Cz" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "CA" = (
 /obj/structure/bonfire/prelit{
 	burn_icon = "bonfire_warm"
@@ -8395,6 +8670,14 @@
 /obj/machinery/light/built/directional/south,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
+"Dz" = (
+/obj/machinery/light/small/directional/west,
+/obj/item/stack/rods{
+	amount = 2
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "DA" = (
 /obj/item/stack/rods,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
@@ -8458,6 +8741,15 @@
 /obj/structure/window/reinforced/spawner/directional/west,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
+"DV" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "DX" = (
 /obj/item/shard,
 /obj/effect/turf_decal/weather/snow,
@@ -8465,7 +8757,7 @@
 /area/awaymission/snowdin/cave)
 "DY" = (
 /obj/effect/turf_decal/weather/snow,
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/cave)
 "Ea" = (
@@ -8489,6 +8781,12 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/snowdin/cave)
+"Eh" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 8
+	},
+/turf/open/floor/plating/snowed/cavern,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Ej" = (
 /obj/structure/grille/broken,
 /obj/item/stack/rods,
@@ -8629,12 +8927,16 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/cave)
 "EK" = (
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/cave)
+"EL" = (
+/mob/living/basic/spider/giant/nurse/ice,
+/turf/open/misc/asteroid/snow/ice,
+/area/awaymission/snowdin/cave/cavern)
 "EM" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal/bot_white,
@@ -8698,6 +9000,16 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
+"Fc" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"Ff" = (
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Fg" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/loading_area,
@@ -8709,6 +9021,13 @@
 /obj/vehicle/ridden/atv,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/outside)
+"Fi" = (
+/obj/effect/turf_decal/stripes/corner,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Fj" = (
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plating/snowed/smoothed,
@@ -8766,50 +9085,11 @@
 	slowdown = 1
 	},
 /area/awaymission/snowdin/cave)
-"FD" = (
-/obj/machinery/door/firedoor,
-/obj/structure/holosign/barrier/atmos,
-/obj/structure/grille/broken,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "FE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/outside)
-"FG" = (
-/obj/item/shard,
-/obj/item/stack/rods{
-	amount = 2
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"FH" = (
-/obj/item/shard,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"FK" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4;
-	piping_layer = 4
-	},
-/obj/structure/sign/warning/xeno_mining/directional/east,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"FL" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 8
-	},
-/turf/open/floor/plating/snowed/cavern,
-/area/awaymission/snowdin/post/mining_dock)
-"FM" = (
-/obj/machinery/door/firedoor,
-/obj/structure/grille/broken,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "FO" = (
 /obj/machinery/computer/monitor{
 	dir = 8
@@ -8822,12 +9102,16 @@
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
 "FQ" = (
-/obj/machinery/conveyor{
-	id = "snowdin_belt_mine"
+/obj/structure/cable,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"FS" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
 	},
-/obj/machinery/light/small/directional/east,
-/turf/open/misc/asteroid/snow/ice,
-/area/awaymission/snowdin/post/mining_dock)
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "FT" = (
 /obj/structure/ore_box,
 /turf/closed/mineral/snowmountain/cavern,
@@ -8844,12 +9128,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main)
-"Gc" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/cavern1)
 "Gd" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/mining_main/robotics)
@@ -8862,14 +9140,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
-"Gi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Gj" = (
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Gk" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/mining_main/mechbay)
@@ -8889,19 +9159,18 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main/mechbay)
-"Gn" = (
-/obj/structure/plasticflaps,
-/obj/machinery/conveyor{
-	id = "snowdin_belt_mine"
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "Go" = (
 /turf/closed/wall,
 /area/awaymission/snowdin/post/mining_main)
 "Gq" = (
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main)
+"Gr" = (
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Gt" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
 	dir = 1
@@ -8959,29 +9228,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main/robotics)
-"GD" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"GE" = (
-/obj/item/disk/holodisk/snowdin/ripjacob,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"GF" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"GG" = (
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "GH" = (
 /turf/closed/wall/rust,
 /area/awaymission/snowdin/post/mining_main/mechbay)
@@ -9013,31 +9259,9 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main/mechbay)
-"GM" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "GN" = (
 /turf/closed/wall,
 /area/awaymission/snowdin/post/mining_main/mechbay)
-"GO" = (
-/obj/machinery/mineral/unloading_machine{
-	dir = 1;
-	icon_state = "unloader-corner";
-	input_dir = 1;
-	output_dir = 2
-	},
-/obj/machinery/conveyor{
-	id = "snowdin_belt_mine"
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "GP" = (
 /turf/closed/wall/rust,
 /area/awaymission/snowdin/post/mining_main)
@@ -9090,18 +9314,19 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main/robotics)
-"GZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Ha" = (
-/obj/structure/cable,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted,
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Hb" = (
-/mob/living/basic/migo,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Hc" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical{
@@ -9138,12 +9363,6 @@
 /obj/effect/spawner/structure/window/ice,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main/mechbay)
-"Hk" = (
-/obj/machinery/conveyor{
-	id = "snowdin_belt_mine"
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "Hl" = (
 /obj/effect/baseturf_helper/asteroid/snow,
 /turf/closed/wall,
@@ -9184,15 +9403,11 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post/mining_main/robotics)
 "Hw" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"Hx" = (
-/obj/machinery/holopad,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
+/obj/structure/sign/warning/no_smoking/directional/south,
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Hy" = (
 /obj/machinery/door/airlock/research/glass{
 	name = "Mech Lab"
@@ -9212,19 +9427,23 @@
 /obj/machinery/mineral/processing_unit_console,
 /turf/closed/wall,
 /area/awaymission/snowdin/post/mining_main/mechbay)
-"HC" = (
-/obj/machinery/mineral/processing_unit{
-	dir = 1
-	},
-/obj/machinery/conveyor{
-	id = "snowdin_belt_mine"
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "HD" = (
 /obj/structure/table,
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main)
+"HE" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main)
+"HF" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main)
 "HG" = (
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
@@ -9260,12 +9479,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post/mining_main/robotics)
-"HN" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post)
 "HO" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron,
@@ -9345,29 +9558,11 @@
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post/mining_main/robotics)
-"Ie" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"If" = (
-/obj/structure/sign/warning/no_smoking/directional/south,
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Ig" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Ih" = (
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Ii" = (
-/obj/machinery/mech_bay_recharge_port,
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron/dark,
+/obj/machinery/door/firedoor,
+/obj/structure/grille/broken,
+/obj/structure/cable,
+/turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main/mechbay)
 "Ij" = (
 /obj/effect/turf_decal/bot,
@@ -9386,19 +9581,10 @@
 /obj/machinery/mech_bay_recharge_port,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/mining_main/mechbay)
-"In" = (
-/obj/vehicle/sealed/mecha/working/ripley/mining,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron/recharge_floor,
-/area/awaymission/snowdin/post/mining_main/mechbay)
 "Io" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_main/mechbay)
-"Ip" = (
-/obj/machinery/light/directional/south,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main/mechbay)
 "Ir" = (
@@ -9412,6 +9598,12 @@
 "It" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main)
+"Iu" = (
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main)
 "Iv" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -9458,12 +9650,12 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "ID" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
+/obj/machinery/power/terminal{
 	dir = 4
 	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "IE" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
@@ -9502,11 +9694,11 @@
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
 "IN" = (
-/obj/machinery/door/airlock/maintenance,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "IQ" = (
 /obj/effect/spawner/random/structure/crate_abandoned,
 /obj/effect/mapping_helpers/broken_floor,
@@ -9520,6 +9712,12 @@
 /area/awaymission/snowdin/post/mining_main)
 "IS" = (
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main)
+"IT" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main)
 "IU" = (
@@ -9567,44 +9765,15 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
-"Jc" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Jd" = (
-/obj/item/shard,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Je" = (
-/obj/effect/turf_decal/delivery,
+/obj/structure/cable,
 /turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Jf" = (
-/obj/structure/plasticflaps,
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "snowdin_belt_mine"
-	},
+/obj/structure/sign/warning/electric_shock/directional/east,
+/obj/structure/cable,
 /turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"Jg" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "snowdin_belt_mine"
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"Jh" = (
-/obj/machinery/conveyor{
-	dir = 10;
-	id = "snowdin_belt_mine"
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Ji" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -9619,32 +9788,29 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main)
 "Jm" = (
-/obj/machinery/door/firedoor,
-/obj/structure/grille/broken,
-/obj/item/stack/rods{
-	amount = 2
+/obj/machinery/conveyor{
+	id = "snowdin_belt_mine"
 	},
-/obj/item/shard,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
+/obj/machinery/light/small/directional/east,
+/turf/open/misc/asteroid/snow/ice,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Jn" = (
-/obj/machinery/space_heater,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"Jo" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 4
 	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Jp" = (
-/obj/structure/closet/crate/preopen,
-/obj/item/storage/toolbox/emergency,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"Jo" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+	dir = 5
+	},
+/obj/structure/spider/stickyweb,
+/mob/living/basic/spider/giant/hunter/ice,
+/turf/open/floor/iron/freezer,
+/area/awaymission/snowdin/post/kitchen)
 "Jq" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -9700,69 +9866,13 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main)
-"JA" = (
-/obj/structure/sign/warning/electric_shock/directional/east,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"JB" = (
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"JC" = (
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"JD" = (
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"JE" = (
-/obj/structure/closet/crate/preopen,
-/obj/item/storage/toolbox/emergency,
-/obj/item/clothing/suit/hooded/wintercoat,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"JF" = (
-/obj/structure/ore_box,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"JG" = (
-/obj/effect/turf_decal/stripes/corner,
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"JH" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/tile/brown/half/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"JI" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/brown/half/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "JJ" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "JL" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 1
@@ -9801,6 +9911,10 @@
 "JQ" = (
 /turf/open/floor/plating/elevatorshaft,
 /area/awaymission/snowdin/post/mining_main)
+"JS" = (
+/obj/machinery/holopad,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "JU" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -9813,44 +9927,6 @@
 "JV" = (
 /turf/open/misc/ice,
 /area/awaymission/snowdin/outside)
-"JW" = (
-/obj/machinery/power/terminal{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"JY" = (
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"JZ" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Misc Storage"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"Ka" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Kb" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Kc" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
@@ -9862,26 +9938,6 @@
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/messhall)
-"Ke" = (
-/obj/structure/sign/poster/official/no_erp/directional/west,
-/obj/machinery/holopad,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/dorm)
-"Kg" = (
-/obj/structure/ore_box,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Ki" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "Kj" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/machinery/power/terminal{
@@ -9926,45 +9982,12 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main)
-"Kp" = (
-/obj/machinery/holopad,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"Kq" = (
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"Kr" = (
-/obj/structure/door_assembly/door_assembly_min{
-	anchored = 1;
-	name = "broken airlock"
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Ks" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 8
-	},
+/obj/structure/closet/crate/preopen,
+/obj/item/storage/toolbox/emergency,
+/obj/item/clothing/suit/hooded/wintercoat,
 /turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
-"Ku" = (
-/obj/machinery/light/directional/east,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Kv" = (
 /obj/structure/fence/corner,
 /turf/open/misc/asteroid/snow,
@@ -10002,27 +10025,6 @@
 /obj/structure/flora/grass/both/style_random,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/cave)
-"KD" = (
-/obj/structure/ore_box,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"KE" = (
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/tile/brown/half/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"KF" = (
-/obj/effect/turf_decal/tile/brown/half/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"KG" = (
-/obj/structure/sign/warning/docking/directional/east,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "KI" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
@@ -10079,18 +10081,6 @@
 	temperature = 120
 	},
 /area/awaymission/snowdin/cave/cavern)
-"KQ" = (
-/obj/machinery/computer/shuttle/snowdin/mining{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "KR" = (
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 8
@@ -10123,32 +10113,6 @@
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main)
-"KX" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"KY" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/caution/stand_clear,
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
-"KZ" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Lf" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
@@ -10166,13 +10130,17 @@
 	set_cap = 3;
 	set_luminosity = 6
 	},
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
 "Li" = (
 /obj/structure/fence/door/opened,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
+"Lj" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Lk" = (
 /obj/machinery/button/door/directional/west{
 	id = "snowdindormabandoned1";
@@ -10183,7 +10151,7 @@
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/post/minipost)
 "Lm" = (
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/misc/asteroid/snow{
 	floor_variance = 0;
 	icon_state = "snow_dug";
@@ -10225,13 +10193,6 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/minipost)
-"Lx" = (
-/obj/machinery/door/airlock/external/glass/ruin,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "Ly" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
 	dir = 9
@@ -10244,6 +10205,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/minipost)
+"LG" = (
+/obj/structure/sign/warning/docking/directional/east,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "LI" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/drip,
@@ -10265,6 +10230,14 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
+"LL" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/machinery/firealarm/directional/north,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/research)
 "LM" = (
 /obj/effect/mob_spawn/corpse/human/assistant,
 /turf/open/misc/asteroid/snow/ice,
@@ -10337,6 +10310,17 @@
 	temperature = 120
 	},
 /area/awaymission/snowdin/cave/cavern)
+"Md" = (
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"Mf" = (
+/obj/item/shard,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Mg" = (
 /obj/structure/table,
 /obj/item/clothing/neck/stethoscope,
@@ -10347,6 +10331,18 @@
 	},
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
+"Mh" = (
+/obj/machinery/computer/shuttle/snowdin/mining{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Mj" = (
 /obj/structure/chair{
 	dir = 4
@@ -10355,12 +10351,13 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "Mk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral{
+/obj/structure/ore_box,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Ml" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
 	dir = 8
@@ -10368,19 +10365,34 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
-"Mo" = (
-/mob/living/simple_animal/hostile/asteroid/basilisk,
-/turf/open/misc/asteroid/snow{
-	floor_variance = 0;
-	icon_state = "snow_dug";
-	slowdown = 1
-	},
-/area/awaymission/snowdin/cave/mountain)
 "Mq" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/cave)
+"Ms" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/storage/box{
+	name = "box of donkpockets"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/kitchen)
+"Mt" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Mz" = (
 /obj/structure/fence,
 /turf/open/misc/asteroid/snow,
@@ -10426,6 +10438,18 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/kitchen)
+"ML" = (
+/obj/structure/plasticflaps,
+/obj/machinery/conveyor{
+	id = "snowdin_belt_mine"
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"MM" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "MN" = (
 /obj/item/stack/rods,
 /turf/open/misc/asteroid/snow,
@@ -10465,7 +10489,7 @@
 /area/awaymission/snowdin/cave/cavern)
 "MV" = (
 /obj/item/shard,
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/misc/asteroid/snow{
 	floor_variance = 0;
 	icon_state = "snow_dug";
@@ -10638,12 +10662,13 @@
 /obj/effect/spawner/random/exotic/antag_gear_weak,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/cave)
-"NT" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post)
+"NU" = (
+/obj/machinery/door/firedoor,
+/obj/structure/holosign/barrier/atmos,
+/obj/structure/grille/broken,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "NV" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/weather/snow/corner{
@@ -10660,6 +10685,13 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
+"NZ" = (
+/obj/structure/door_assembly/door_assembly_min{
+	anchored = 1;
+	name = "broken airlock"
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Ob" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
@@ -10668,6 +10700,10 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
+"Od" = (
+/mob/living/basic/spider/giant/hunter/ice,
+/turf/open/misc/asteroid/snow/ice,
+/area/awaymission/snowdin/cave/cavern)
 "Oe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -10745,11 +10781,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/cave)
-"OB" = (
-/obj/machinery/light/small/directional/north,
-/obj/effect/spawner/random/structure/crate_abandoned,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "OD" = (
 /obj/machinery/light/small/directional/west,
 /obj/structure/closet/emcloset,
@@ -10800,6 +10831,17 @@
 /obj/item/paper/fluff/awaymissions/snowdin/secnotice,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/secpost)
+"OX" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/research)
 "OZ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
 	piping_layer = 4;
@@ -10879,14 +10921,6 @@
 	},
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"Pr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
-/obj/structure/spider/stickyweb,
-/mob/living/basic/giant_spider/hunter/ice,
-/turf/open/floor/iron/freezer,
-/area/awaymission/snowdin/post/kitchen)
 "Ps" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
@@ -10897,6 +10931,17 @@
 	slowdown = 1
 	},
 /area/awaymission/snowdin/cave)
+"Pt" = (
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 2;
+	height = 5;
+	shuttle_id = "snowdin_mining_down";
+	name = "snowdin mining bottom";
+	width = 5
+	},
+/turf/open/floor/plating/elevatorshaft,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Pu" = (
 /obj/effect/light_emitter{
 	name = "outdoor light";
@@ -10944,6 +10989,20 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=180"
 	},
 /area/awaymission/snowdin/cave)
+"PN" = (
+/obj/machinery/light/small/directional/north,
+/obj/effect/spawner/random/structure/crate_abandoned,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
+"PO" = (
+/obj/structure/spider/stickyweb,
+/mob/living/basic/spider/giant/hunter/ice,
+/turf/open/misc/asteroid/snow/ice,
+/area/awaymission/snowdin/cave/cavern)
+"PP" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "PQ" = (
 /obj/item/reagent_containers/cup/glass/bottle/beer{
 	list_reagents = null
@@ -10989,12 +11048,6 @@
 	slowdown = 1
 	},
 /area/awaymission/snowdin/outside)
-"Qb" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/minipost)
 "Qc" = (
 /obj/structure/flora/tree/stump,
 /obj/effect/light_emitter{
@@ -11020,13 +11073,6 @@
 	slowdown = 1
 	},
 /area/awaymission/snowdin/cave)
-"Qg" = (
-/obj/effect/baseturf_helper/asteroid/snow{
-	baseturf = /turf/open/misc/asteroid/snow/ice;
-	name = "asteroid snowice baseturf editor"
-	},
-/turf/closed/wall/ice,
-/area/awaymission/snowdin/post/mining_dock)
 "Qh" = (
 /obj/structure/table,
 /obj/item/clothing/glasses/hud/health,
@@ -11068,6 +11114,13 @@
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern1)
+"Qu" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Qv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/extinguisher_cabinet/directional/south,
@@ -11079,13 +11132,13 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
-"Qy" = (
-/obj/machinery/light/small/directional/south,
-/obj/structure/sign/nanotrasen{
-	pixel_y = -32
+"QA" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
 	},
-/turf/open/misc/asteroid/snow/ice,
-/area/awaymission/snowdin/post/mining_dock)
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "QB" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1;
@@ -11138,9 +11191,12 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/research)
 "QM" = (
-/mob/living/basic/giant_spider/nurse/ice,
-/turf/open/misc/asteroid/snow/ice,
-/area/awaymission/snowdin/cave/cavern)
+/obj/machinery/door/airlock/maintenance{
+	name = "Misc Storage"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "QN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
 	piping_layer = 4;
@@ -11157,10 +11213,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/cave)
-"QP" = (
-/mob/living/simple_animal/hostile/asteroid/basilisk,
-/turf/open/misc/asteroid/snow/ice,
-/area/awaymission/snowdin/cave/cavern)
 "QQ" = (
 /obj/structure/flora/grass/both/style_random,
 /obj/structure/flora/grass/both/style_random,
@@ -11187,19 +11239,24 @@
 "QS" = (
 /turf/open/misc/ice/smooth,
 /area/awaymission/snowdin/cave)
-"QT" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/cavern1)
 "QU" = (
 /obj/machinery/light/small/directional/south,
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
+"QX" = (
+/obj/machinery/mineral/unloading_machine{
+	dir = 1;
+	icon_state = "unloader-corner";
+	input_dir = 1;
+	output_dir = 2
+	},
+/obj/machinery/conveyor{
+	id = "snowdin_belt_mine"
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "QY" = (
 /obj/structure/girder,
 /obj/effect/turf_decal/weather/snow,
@@ -11257,6 +11314,13 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_main)
+"Rr" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+	dir = 4;
+	piping_layer = 4
+	},
+/turf/closed/wall/ice,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Rs" = (
 /obj/item/stack/cable_coil{
 	amount = 1
@@ -11264,6 +11328,10 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/cave)
+"Rt" = (
+/mob/living/basic/mining/basilisk,
+/turf/open/misc/asteroid/snow/ice,
+/area/awaymission/snowdin/cave/cavern)
 "Ru" = (
 /obj/item/shard,
 /turf/open/misc/asteroid/snow,
@@ -11274,6 +11342,15 @@
 	},
 /turf/open/misc/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
+"Ry" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "RB" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/misc/asteroid/snow,
@@ -11295,23 +11372,20 @@
 /obj/effect/baseturf_helper/asteroid/snow,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"RF" = (
-/obj/machinery/airalarm/directional/north,
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "RH" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
-"RJ" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
+"RK" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_main)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "RN" = (
 /obj/structure/flora/bush/snow/style_random,
 /obj/effect/light_emitter{
@@ -11369,7 +11443,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "Sa" = (
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/cave)
 "Sb" = (
@@ -11387,10 +11461,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/cave)
-"Si" = (
-/mob/living/basic/giant_spider/hunter/ice,
-/turf/open/misc/asteroid/snow/ice,
-/area/awaymission/snowdin/cave/cavern)
 "Sj" = (
 /obj/machinery/button/door/directional/south{
 	id = "snowdinturbineoutlet";
@@ -11428,6 +11498,11 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_dock)
+"Sn" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "So" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/snowed/smoothed,
@@ -11559,14 +11634,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_dock)
-"SQ" = (
-/obj/machinery/light/small/directional/west,
-/obj/item/stack/rods{
-	amount = 2
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "SS" = (
 /obj/structure/fence{
 	dir = 4
@@ -11621,9 +11688,15 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern2)
 "Tf" = (
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
+"Tj" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Tk" = (
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/misc/asteroid/snow{
@@ -11651,14 +11724,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/outside)
-"Ts" = (
-/obj/machinery/airalarm/directional/north,
-/obj/structure/sign/warning/docking/directional/east,
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Tv" = (
 /obj/structure/table,
 /obj/item/storage/medkit/ancient,
@@ -11684,6 +11749,12 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/engine/n2,
 /area/awaymission/snowdin/post/engineering)
+"TG" = (
+/obj/machinery/door/airlock/external/glass/ruin,
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "TI" = (
 /obj/structure/flora/grass/both/style_random,
 /turf/open/misc/asteroid/snow,
@@ -11709,12 +11780,6 @@
 	slowdown = 1
 	},
 /area/awaymission/snowdin/outside)
-"TQ" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_main)
 "TR" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -11758,10 +11823,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
-"Uf" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "Ui" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/misc/ice/smooth,
@@ -11862,29 +11923,6 @@
 	},
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"UD" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_main)
-"UF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post)
 "UG" = (
 /obj/effect/light_emitter{
 	name = "outdoor light";
@@ -11898,11 +11936,6 @@
 	},
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"UH" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "UI" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/misc/asteroid/snow/ice,
@@ -11956,11 +11989,35 @@
 	slowdown = 1
 	},
 /area/awaymission/snowdin/cave)
+"Vh" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+	dir = 4;
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/storage/box{
+	name = "box of donkpockets"
+	},
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/kitchen)
 "Vi" = (
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/bear/snow,
+/mob/living/basic/bear/snow,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/cave)
+"Vj" = (
+/obj/item/shard,
+/obj/item/stack/rods{
+	amount = 2
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Vl" = (
 /obj/machinery/power/shuttle_engine/propulsion{
 	dir = 4
@@ -11980,10 +12037,6 @@
 	slowdown = 1
 	},
 /area/awaymission/snowdin/outside)
-"Vo" = (
-/mob/living/basic/giant_spider/ice,
-/turf/open/misc/asteroid/snow/ice,
-/area/awaymission/snowdin/cave/cavern)
 "Vp" = (
 /obj/item/paper/crumpled/ruins/snowdin/misc1,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -12037,6 +12090,13 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/cave)
+"VC" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "snowdin_belt_mine"
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "VE" = (
 /obj/structure/table/wood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -12051,6 +12111,10 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_dock)
+"VH" = (
+/mob/living/basic/spider/giant/ice,
+/turf/open/misc/asteroid/snow/ice,
+/area/awaymission/snowdin/cave/cavern)
 "VJ" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
@@ -12083,12 +12147,6 @@
 /obj/effect/spawner/random/exotic/antag_gear_weak,
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/cave/cavern)
-"VW" = (
-/obj/machinery/door/airlock/external/glass/ruin,
-/obj/structure/fans/tiny,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/mining_dock)
 "VY" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/misc/asteroid/snow,
@@ -12104,11 +12162,11 @@
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
 "Wg" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
+	dir = 4
 	},
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/dorm)
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "Wh" = (
 /obj/structure/bookcase/random,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -12120,13 +12178,6 @@
 /obj/item/storage/toolbox/emergency,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/awaymission/snowdin/post)
-"Wm" = (
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "Wp" = (
 /obj/structure/statue/snow/snowman{
@@ -12215,6 +12266,11 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/minipost)
+"WK" = (
+/obj/vehicle/sealed/mecha/ripley/mining,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/recharge_floor,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "WM" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
@@ -12222,10 +12278,26 @@
 "WN" = (
 /turf/open/misc/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
+"WP" = (
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "WR" = (
 /obj/item/shard,
 /turf/open/misc/ice/smooth,
 /area/awaymission/snowdin/cave)
+"WS" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/cavern1)
+"WU" = (
+/obj/structure/ore_box,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "WV" = (
 /obj/machinery/light/small/directional/south,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
@@ -12289,13 +12361,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/secpost)
-"Xu" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Xw" = (
 /obj/structure/table,
 /obj/machinery/light/small/directional/south,
@@ -12484,14 +12549,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/cavern2)
-"YA" = (
-/obj/machinery/door/airlock/mining/glass{
-	name = "Mining Dock"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/supply/mining,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "YB" = (
 /obj/machinery/light/broken/directional/west,
 /obj/effect/spawner/random/structure/crate_abandoned,
@@ -12526,34 +12583,23 @@
 /obj/structure/sign/warning/fire/directional/south,
 /turf/open/floor/engine,
 /area/awaymission/snowdin/post/engineering)
-"YH" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 2;
-	height = 5;
-	shuttle_id = "snowdin_mining_down";
-	name = "snowdin mining bottom";
-	width = 5
-	},
-/turf/open/floor/plating/elevatorshaft,
-/area/awaymission/snowdin/post/mining_dock)
 "YK" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/grimy,
 /area/awaymission/snowdin/post/cavern2)
+"YN" = (
+/obj/machinery/mineral/processing_unit{
+	dir = 1
+	},
+/obj/machinery/conveyor{
+	id = "snowdin_belt_mine"
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "YO" = (
 /obj/structure/ore_box,
 /turf/open/misc/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
-"YP" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/machinery/light/directional/north,
-/obj/machinery/firealarm/directional/north,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/research)
 "YR" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/structure/closet/crate/preopen{
@@ -12590,21 +12636,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/gateway)
-"Zf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/dorm)
 "Zj" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	piping_layer = 4;
@@ -12617,16 +12648,6 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
-"Zl" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/mining_dock)
 "Zn" = (
 /obj/structure/flora/tree/pine/style_random,
 /obj/effect/light_emitter{
@@ -12691,6 +12712,14 @@
 /obj/structure/mecha_wreckage/ripley,
 /turf/open/misc/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
+"ZA" = (
+/obj/machinery/door/airlock/maintenance{
+	name = "SMES Storage"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "ZB" = (
 /obj/structure/table,
 /obj/machinery/airalarm/directional/north,
@@ -12702,6 +12731,14 @@
 	},
 /turf/open/misc/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
+"ZF" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4;
+	piping_layer = 4
+	},
+/obj/structure/sign/warning/xeno_mining/directional/east,
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/mining_main/mechbay)
 "ZH" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
 	dir = 4;
@@ -12733,13 +12770,6 @@
 	},
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"ZO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post)
 "ZT" = (
 /obj/structure/chair/stool/directional/west,
 /turf/open/misc/asteroid/snow{
@@ -18434,13 +18464,13 @@ bQ
 cp
 cV
 cv
-ko
-Wg
-Ke
-Wg
-Wg
-Zf
-Wg
+ec
+eQ
+ft
+eQ
+eQ
+hK
+eQ
 je
 aS
 kw
@@ -21268,8 +21298,8 @@ gp
 hg
 hN
 it
-HN
-Wm
+jn
+nJ
 jR
 jR
 mc
@@ -21526,10 +21556,10 @@ Zp
 hO
 iu
 jm
-Mk
-NT
-ZO
-UF
+jT
+kF
+se
+md
 xw
 QB
 nF
@@ -23054,7 +23084,7 @@ az
 aC
 aC
 az
-YP
+LL
 bF
 bV
 cA
@@ -23334,7 +23364,7 @@ nh
 nJ
 hM
 oI
-bG
+pp
 pN
 dK
 qM
@@ -23532,7 +23562,7 @@ GP
 HD
 GR
 It
-RJ
+Iu
 IR
 Go
 Is
@@ -23786,7 +23816,7 @@ FZ
 Go
 GP
 Go
-UD
+HE
 Gq
 Xb
 HW
@@ -24043,7 +24073,7 @@ Ga
 PC
 GQ
 Hm
-TQ
+HF
 HW
 Gq
 Gq
@@ -24082,7 +24112,7 @@ aC
 aC
 aC
 az
-bt
+OX
 bJ
 Sp
 bp
@@ -24304,7 +24334,7 @@ GR
 HW
 Gq
 GR
-kD
+IT
 IR
 cG
 Gq
@@ -24469,7 +24499,7 @@ zo
 yW
 zV
 Ai
-Qb
+Aw
 zp
 AM
 AZ
@@ -24817,7 +24847,7 @@ Go
 GP
 GP
 Go
-TQ
+HF
 Gq
 IW
 Rn
@@ -25073,7 +25103,7 @@ ae
 ae
 FZ
 HY
-RJ
+Iu
 IG
 IS
 Go
@@ -25329,7 +25359,7 @@ Zy
 Zy
 TI
 Ga
-TQ
+HF
 HW
 HW
 IU
@@ -25370,7 +25400,7 @@ be
 bu
 bL
 Lg
-Pr
+Jo
 dn
 dO
 et
@@ -25586,7 +25616,7 @@ Zy
 TI
 Qd
 Ga
-TQ
+HF
 GR
 HW
 IV
@@ -26416,9 +26446,9 @@ ZU
 dO
 ST
 nU
-oq
+ut
 oQ
-py
+bG
 pV
 Nv
 Mb
@@ -26912,7 +26942,7 @@ Zy
 Zy
 bf
 SE
-cM
+Vh
 ds
 dR
 ey
@@ -27171,7 +27201,7 @@ bf
 ch
 cN
 dt
-dS
+Ms
 ez
 fj
 fQ
@@ -28400,7 +28430,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 Zy
 dX
 dX
@@ -28657,7 +28687,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 FP
 te
 dX
@@ -28667,10 +28697,10 @@ TI
 dX
 te
 Gf
-tq
-tq
-tq
-tq
+ku
+ku
+ku
+ku
 ae
 ae
 ae
@@ -28914,7 +28944,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 Fn
 Gw
 Fx
@@ -28927,7 +28957,7 @@ Fy
 GS
 Ho
 Ho
-tq
+ku
 ae
 ae
 ae
@@ -29171,7 +29201,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 Fo
 Fx
 te
@@ -29184,7 +29214,7 @@ Gt
 GT
 Hp
 Ho
-tq
+ku
 ae
 ae
 ae
@@ -29428,7 +29458,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 Fp
 Fx
 te
@@ -29438,10 +29468,10 @@ Zy
 dX
 te
 WV
-tq
-tq
-tq
-tq
+ku
+ku
+ku
+ku
 ae
 ae
 ae
@@ -29685,7 +29715,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 WA
 Fx
 te
@@ -29942,7 +29972,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 Fn
 Fu
 Fy
@@ -29952,10 +29982,10 @@ Zy
 dX
 te
 WV
-tq
-tq
-tq
-tq
+ku
+ku
+ku
+ku
 ae
 ae
 ae
@@ -30199,8 +30229,8 @@ ae
 ae
 ae
 ae
-tq
-tq
+ku
+ku
 Fp
 Fx
 te
@@ -30212,7 +30242,7 @@ Gw
 GS
 Ho
 Ho
-tq
+ku
 ae
 ae
 ae
@@ -30457,7 +30487,7 @@ ae
 ae
 ae
 ae
-tq
+ku
 Fp
 RS
 Fx
@@ -30469,7 +30499,7 @@ Fu
 GT
 Hp
 Ho
-tq
+ku
 ae
 ae
 ae
@@ -30714,19 +30744,19 @@ ae
 ae
 ae
 ae
-tq
-tq
-tq
+ku
+ku
+ku
 Zy
 dX
 Zy
 dX
 te
 Gf
-tq
-tq
-tq
-tq
+ku
+ku
+ku
+ku
 ae
 ae
 ae
@@ -45237,7 +45267,7 @@ ae
 Pd
 Pd
 Pd
-Mo
+xo
 Pd
 ae
 ae
@@ -45748,7 +45778,7 @@ ae
 ae
 ae
 Pd
-Mo
+xo
 Pd
 Pd
 Pd
@@ -50369,7 +50399,7 @@ wN
 wN
 WN
 WN
-Vo
+VH
 WN
 WN
 wN
@@ -50872,13 +50902,13 @@ eJ
 wN
 WN
 WN
-Vo
+VH
 wN
 wN
 WN
 WN
 WN
-QM
+EL
 WN
 WN
 eJ
@@ -51144,7 +51174,7 @@ eJ
 eJ
 eJ
 WN
-QM
+EL
 WN
 wN
 WN
@@ -51639,7 +51669,7 @@ eJ
 eJ
 eJ
 WN
-QM
+EL
 eJ
 eJ
 eJ
@@ -51682,7 +51712,7 @@ eJ
 eJ
 UT
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -52164,10 +52194,10 @@ eJ
 eJ
 eJ
 WN
-Si
+Od
 WN
 WN
-pc
+PO
 eJ
 eJ
 eJ
@@ -52314,11 +52344,11 @@ ge
 gW
 WN
 WN
-QP
+Rt
 WN
 gW
 WN
-QP
+Rt
 WN
 WN
 eJ
@@ -53346,7 +53376,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -53946,7 +53976,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -53990,7 +54020,7 @@ eJ
 WN
 WN
 WN
-QP
+Rt
 WN
 eJ
 eJ
@@ -55755,7 +55785,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -56288,7 +56318,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -57200,11 +57230,11 @@ OP
 HL
 Iz
 GU
-wE
-wE
-wE
-wD
-wD
+GH
+GH
+GH
+GN
+GN
 eJ
 eJ
 eJ
@@ -57457,11 +57487,11 @@ HK
 HL
 IA
 GU
-vW
-Uf
-wL
-wO
-wE
+wB
+uJ
+He
+Sn
+GH
 eJ
 eJ
 eJ
@@ -57714,11 +57744,11 @@ HL
 Vd
 IB
 Gx
-wM
-wL
-wL
-JW
-wE
+Jd
+He
+He
+ID
+GH
 eJ
 eJ
 eJ
@@ -57971,11 +58001,11 @@ HM
 HM
 IB
 IJ
-wM
-wM
-JA
-wG
-wE
+Jd
+Jd
+Jf
+wx
+GH
 eJ
 eJ
 eJ
@@ -58105,7 +58135,7 @@ eJ
 eJ
 eJ
 WN
-QP
+Rt
 WN
 WN
 eJ
@@ -58228,14 +58258,14 @@ GC
 Ic
 GU
 GU
-wR
-wD
-wD
-wE
-wE
-wD
-wD
-wD
+ZA
+GN
+GN
+GH
+GH
+GN
+GN
+GN
 eJ
 eJ
 bh
@@ -58475,24 +58505,24 @@ WN
 WN
 WN
 WN
-xW
-xW
-xW
-wT
-xN
-wL
-xN
-ef
-ef
-ef
-Jc
-YA
-JB
-JY
-Kg
-Kg
-KD
-wD
+Gk
+Gk
+Gk
+Gr
+Hb
+He
+Hb
+Qu
+Qu
+Qu
+sv
+wz
+fq
+Ci
+Mk
+Mk
+vQ
+GN
 eJ
 eJ
 bh
@@ -58728,28 +58758,28 @@ WN
 WN
 WN
 WN
-Qy
-Qg
-xW
-xW
-xW
-wL
-xN
-GD
-GZ
-xy
-Gj
-wL
-wL
-Gi
-Jd
-Jm
-JC
-GZ
-Gj
-xy
-xy
-wD
+Cw
+xr
+Gk
+Gk
+Gk
+He
+Hb
+zg
+Hg
+Hf
+Hh
+He
+He
+rj
+Mf
+xX
+IN
+Hg
+Hh
+Hf
+Hf
+GN
 eJ
 eJ
 bh
@@ -58986,27 +59016,27 @@ WN
 WN
 WN
 PV
-FD
-FG
-SQ
-FM
-Jo
-Gi
-GE
-Ha
-Hw
-Hw
-Hw
-ID
-wM
+NU
+Vj
+Dz
 Ih
-YA
-JD
-wL
-xy
-Gj
-xy
-wD
+Mt
+rj
+xK
+WP
+FQ
+FQ
+FQ
+JJ
+Jd
+zb
+wz
+Md
+He
+Hf
+Hh
+Hf
+GN
 eJ
 eJ
 bh
@@ -59104,11 +59134,11 @@ ue
 ue
 tY
 ul
-zO
-zO
-zO
-QT
-QT
+uE
+uE
+uE
+vc
+vc
 ul
 vB
 tY
@@ -59243,27 +59273,27 @@ WN
 cF
 WN
 WN
-VW
-FH
-wL
-Lx
-xy
-Gj
-xy
-Hb
-Hx
-xy
-Ie
-wD
+TG
+xP
+He
+dF
+Hf
+Hh
+Hf
+AS
+uP
+Hf
+tD
+GN
+sL
+GH
+GN
+GN
+GN
 IN
-wE
-wD
-wD
-wD
-JC
-GZ
-KE
-wD
+Hg
+tV
+GN
 eJ
 eJ
 bh
@@ -59360,7 +59390,7 @@ uc
 UA
 uk
 ur
-Gc
+ux
 uF
 ul
 ul
@@ -59500,27 +59530,27 @@ UI
 WN
 WN
 WN
-VW
-wL
-FK
-Lx
-xy
-xy
-wL
-Gj
-GZ
-Gj
-If
-wD
-wM
-wE
-Jn
-Jn
-wE
-JC
-Kp
-KF
-wD
+TG
+He
+ZF
+dF
+Hf
+Hf
+He
+Hh
+Hg
+Hh
+Hw
+GN
+Jd
+GH
+Ff
+Ff
+GH
+IN
+JS
+PP
+GN
 eJ
 eJ
 bh
@@ -59604,7 +59634,7 @@ eJ
 eJ
 UT
 WN
-Si
+Od
 eJ
 eJ
 eJ
@@ -59756,28 +59786,28 @@ WN
 WN
 WN
 WN
-Qy
-xW
-xW
-zI
-xW
-RF
-ya
-GF
-xy
-wL
-xy
-Ig
-wD
-wM
-wD
-OB
-wL
-JZ
-JC
-GZ
-xy
-wD
+Cw
+Gk
+Gk
+Rr
+Gk
+tx
+Cz
+Fc
+Hf
+He
+Hf
+sx
+GN
+Jd
+GN
+PN
+He
+QM
+IN
+Hg
+Hf
+GN
 eJ
 eJ
 bh
@@ -59874,7 +59904,7 @@ tY
 ug
 ul
 tZ
-jc
+WS
 PI
 uK
 PI
@@ -60016,25 +60046,25 @@ WN
 WN
 WN
 WN
-FL
-xW
-xW
-xW
-GG
-wL
-ya
-ya
-Ih
-wD
-UH
-wD
-Jp
-JE
-wD
-Ts
-Kq
-KG
-wD
+Eh
+Gk
+Gk
+Gk
+Wg
+He
+Cz
+Cz
+zb
+GN
+Jd
+GN
+Cs
+Ks
+GN
+zF
+Tj
+LG
+GN
 eJ
 eJ
 bh
@@ -60283,17 +60313,17 @@ Hy
 GN
 GH
 GH
-wM
-wE
-wD
-wE
-wE
-wD
-Kr
-wD
-wD
-wE
-wE
+Jd
+GH
+GN
+GH
+GH
+GN
+NZ
+GN
+GN
+GH
+GH
 bh
 bh
 bh
@@ -60538,19 +60568,19 @@ GI
 Hc
 Hg
 YZ
-Ii
+Im
 GN
-wM
-wL
-wD
-JF
-JF
-Ki
-wL
-GZ
-wL
-Gj
-wD
+Jd
+He
+GN
+WU
+WU
+Lj
+He
+Hg
+He
+Hh
+GN
 bh
 bh
 bh
@@ -60648,8 +60678,8 @@ ul
 uA
 tY
 vo
-zO
-QT
+uE
+vc
 WG
 vx
 tY
@@ -60797,17 +60827,17 @@ Hg
 HO
 Ij
 GH
-wM
-wL
-wD
-JG
-Ka
-xO
-Ks
-Ka
-KQ
-KZ
-wE
+Jd
+He
+GN
+Fi
+vH
+FS
+Ry
+vH
+Mh
+Ha
+GH
 bh
 bh
 bh
@@ -61054,17 +61084,17 @@ He
 HP
 Ik
 GH
-wM
-wL
-wE
-JH
-Ys
-Ys
-YH
-Ys
-Ys
-KX
-wE
+Jd
+He
+GH
+MM
+hf
+hf
+Pt
+hf
+hf
+vz
+GH
 bh
 bh
 bh
@@ -61312,16 +61342,16 @@ HQ
 Il
 GH
 WX
-wL
-wE
-JH
-Ys
-Ys
-Ys
-Ys
-Ys
-KX
-wE
+He
+GH
+MM
+hf
+hf
+hf
+hf
+hf
+vz
+GH
 bh
 bh
 bh
@@ -61397,7 +61427,7 @@ eJ
 eJ
 eJ
 eJ
-QP
+Rt
 WN
 eJ
 eJ
@@ -61568,17 +61598,17 @@ Hz
 HO
 Im
 GN
-wL
-wL
-wE
-JI
-Ys
-Ys
-Ys
-Ys
-Ys
-KY
-wE
+He
+He
+GH
+la
+hf
+hf
+hf
+hf
+hf
+RK
+GH
 bh
 bh
 bh
@@ -61812,7 +61842,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -61823,19 +61853,19 @@ GJ
 He
 HA
 HO
-In
+WK
 GH
-wL
-wL
-wE
-JH
-Ys
-Ys
-Ys
-Ys
-Ys
-KX
-wE
+He
+He
+GH
+MM
+hf
+hf
+hf
+hf
+hf
+vz
+GH
 bh
 bh
 bh
@@ -62082,17 +62112,17 @@ Hf
 HO
 Ik
 GN
-wL
-wL
-wD
-JH
-Ys
-Ys
-Ys
-Ys
-Ys
-KX
-wD
+He
+He
+GN
+MM
+hf
+hf
+hf
+hf
+hf
+vz
+GN
 bh
 bh
 bh
@@ -62339,17 +62369,17 @@ Hg
 Um
 Io
 IE
-wL
-Je
-wD
-JJ
-Kb
-Kb
-Ku
-Kb
-Kb
-Xu
-wD
+He
+tS
+GN
+Jn
+DV
+DV
+gg
+DV
+DV
+QA
+GN
 bh
 bh
 bh
@@ -62594,19 +62624,19 @@ HR
 Hi
 Hh
 HS
-Ip
+Hh
 GN
-wD
-Jf
-wE
-wD
-wE
-wD
-wD
-wE
-wE
-wD
-wD
+GN
+sr
+GH
+GN
+GH
+GN
+GN
+GH
+GH
+GN
+GN
 bh
 bh
 bh
@@ -62853,9 +62883,9 @@ HB
 GN
 GH
 GH
-wL
-Jg
-wD
+He
+VC
+GN
 eJ
 eJ
 eJ
@@ -63102,17 +63132,17 @@ WN
 WN
 WN
 Bw
-FQ
-Gn
-GO
-Hk
-HC
-Hk
-Hk
-Hk
-Hk
-Jh
-wE
+Jm
+ML
+QX
+fU
+YN
+fU
+fU
+fU
+fU
+oZ
+GH
 eJ
 eJ
 eJ
@@ -63359,17 +63389,17 @@ WN
 WN
 WN
 ui
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
-xW
+Gk
+Gk
+Gk
+Gk
+Gk
+Gk
+Gk
+Gk
+Gk
+Gk
+Gk
 eJ
 eJ
 eJ
@@ -65067,7 +65097,7 @@ Ys
 Ys
 Ys
 Ys
-Zl
+yC
 yS
 zm
 zw
@@ -65324,7 +65354,7 @@ wW
 Ys
 Ys
 Ys
-Zl
+yC
 yT
 wE
 xW
@@ -65578,9 +65608,9 @@ xj
 xu
 xu
 xu
-GM
-GM
-GM
+xQ
+xQ
+xQ
 yE
 yQ
 wE
@@ -65792,7 +65822,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 eJ
 eJ
@@ -66037,7 +66067,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -66298,7 +66328,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN
@@ -67072,7 +67102,7 @@ WN
 WN
 WN
 WN
-QP
+Rt
 WN
 WN
 WN

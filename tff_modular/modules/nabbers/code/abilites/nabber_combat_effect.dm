@@ -9,18 +9,38 @@
 	var/image/nabber_image
 
 /datum/status_effect/nabber_combat/on_apply()
+<<<<<<< HEAD
 	nabber_image = image(NABBER_THREAT_ICON, owner, NABBER_THREAT_ICON_STATE, dir = owner.dir)
 	nabber_image.override = TRUE
 	nabber_image.alpha = 0
 	animate(nabber_image, alpha = 255, 0.2 SECONDS)
 	owner.add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/everyone, id, nabber_image)
 
+=======
+	var/mob/living/carbon/human/color_source = owner
+
+	nabber_image = image(NABBER_THREAT_ICON, owner, NABBER_THREAT_ICON_STATE, dir = owner.dir)
+	nabber_image.override = TRUE
+	nabber_image.alpha = 0
+	nabber_image.color = color_source.dna.features["mcolor"]
+	animate(nabber_image, alpha = 255, 0.2 SECONDS)
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/nabber_combat)
+	owner.add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/everyone, id, nabber_image)
+
+	if(owner.body_position == LYING_DOWN)
+		nabber_image.transform = turn(nabber_image.transform, 90)
+
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_dir_change))
 	RegisterSignal(owner, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(on_body_position_change))
 	return TRUE
 
 /datum/status_effect/nabber_combat/on_remove()
 	owner.remove_alt_appearance(id)
+<<<<<<< HEAD
+=======
+	owner.remove_movespeed_modifier(/datum/movespeed_modifier/nabber_combat)
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 	QDEL_NULL(nabber_image)
 
 	UnregisterSignal(owner, list(
@@ -41,5 +61,12 @@
 	else
 		nabber_image.transform = turn(nabber_image.transform, -90)
 
+<<<<<<< HEAD
+=======
+/datum/movespeed_modifier/nabber_combat
+	blacklisted_movetypes = FLYING
+	multiplicative_slowdown = -0.25
+
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 #undef NABBER_THREAT_ICON
 #undef NABBER_THREAT_ICON_STATE

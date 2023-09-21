@@ -1,5 +1,24 @@
+<<<<<<< HEAD
 #define ORGGAN_ICON_NABBER 'tff_modular/modules/nabbers/icons/organs/nabber_organs.dmi'
 
+=======
+#define NABBER_COLD_THRESHOLD_1 180
+#define NABBER_COLD_THRESHOLD_2 140
+#define NABBER_COLD_THRESHOLD_3 100
+
+#define NABBER_HEAT_THRESHOLD_1 300
+#define NABBER_HEAT_THRESHOLD_2 440
+#define NABBER_HEAT_THRESHOLD_3 600
+
+#define ORGGAN_ICON_NABBER 'tff_modular/modules/nabbers/icons/organs/nabber_organs.dmi'
+
+/obj/item/organ/internal/tongue/nabber
+	name = "nabber tongue"
+	liked_foodtypes = RAW | GORE | GRAIN
+	disliked_foodtypes = CLOTH | FRIED | TOXIC
+	toxic_foodtypes = DAIRY
+
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 /obj/item/organ/internal/ears/nabber
 	name = "nabber ears"
 	icon = ORGGAN_ICON_NABBER
@@ -33,15 +52,27 @@
 
 /obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, drop_if_replaced)
 	. = ..()
+<<<<<<< HEAD
 	shield = new()
+=======
+	shield = new(eye_recipient)
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 	shield.button_icon = ORGGAN_ICON_NABBER
 	shield.button_icon_state = "eyes"
 	shield.Grant(eye_recipient)
 	shield.eyes = src
 
 /obj/item/organ/internal/eyes/robotic/nabber/proc/toggle_shielding()
+<<<<<<< HEAD
 	active = !active
 	playsound(src, 'sound/machines/click.ogg', 50, TRUE)
+=======
+	if(!owner)
+		return
+
+	active = !active
+	playsound(owner, 'sound/machines/click.ogg', 50, TRUE)
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 
 	if(active)
 		flash_protect = FLASH_PROTECTION_WELDER
@@ -55,10 +86,18 @@
 	owner.update_tint()
 	owner.balloon_alert(owner, "Welder eyelids open!")
 
+<<<<<<< HEAD
 
 /obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
 	. = ..()
 	shield.Destroy()
+=======
+/obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
+	. = ..()
+	shield.Destroy()
+	active = FALSE
+	toggle_shielding()
+>>>>>>> 832b06a396bfa66225e5402854c282ad4091f574
 
 /obj/item/organ/internal/lungs/nabber
 	name = "nabber lungs"
