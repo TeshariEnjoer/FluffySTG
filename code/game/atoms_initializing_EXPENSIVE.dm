@@ -125,4 +125,8 @@
 	if(ispath(ai_controller))
 		ai_controller = new ai_controller(src)
 
+	//Установка значений реальности.
+	set_reality_level(GLOB.world_reality_level)
+	set_reality_density(GLOB.world_reality_level)
+
 	return INITIALIZE_HINT_NORMAL
