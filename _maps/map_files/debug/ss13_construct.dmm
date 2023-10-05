@@ -1017,10 +1017,6 @@
 	dir = 1
 	},
 /obj/structure/table,
-/obj/item/paper{
-	name = "Для архитекторов";
-	text = " Не разбирайте автоматы и не пытайтесь перенести их, или уничтожить. Оставьте это для будущих визитеров. П.С Пополения не будет."
-	},
 /obj/item/disk/nuclear,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small

@@ -1,6 +1,6 @@
 /obj/item/phystool
 	name = "Toolgun"
-	desc = "Some kind of an revolver.. bluespace power cell and anomaly core connected together..."
+	desc = "Some kind of a revolver with a bluespace power cell and an anomaly core attached together."
 	icon = 'tff_modular/master_files/icons/obj/architector_items.dmi'
 	icon_state = "toolgun"
 	inhand_icon_state = "toolgun"
@@ -18,21 +18,21 @@
 	resistance_flags = INDESTRUCTIBLE
 
 
-	//Режим взаимодействия выбранный в данный момент.
+	//The mode that is chosen at the moment.
 	var/datum/phystool_mode/selected_mode
-	//Режими, доступные для использования.
+	//Available modes.
 	var/list/datum/phystool_mode/avaible_modes = list(
 		/datum/phystool_mode/build_mode,
 		/datum/phystool_mode/spawn_mode,
 		/datum/phystool_mode/color_mode,
 		/datum/phystool_mode/size_mode,
 	)
-	//Датум луча, во время использования.
+	//The datum of the beam.
 	var/datum/beam/work_beam
 
 /obj/item/phystool/examine(mob/user)
 	. = ..()
-	. += span_notice("ALT + LMB on device, to choise work mode.")
+	. += span_notice("Use ALT + LMB on the device to choose the mode.")
 	if(!selected_mode)
 		. += span_notice("No selected mode!")
 		return

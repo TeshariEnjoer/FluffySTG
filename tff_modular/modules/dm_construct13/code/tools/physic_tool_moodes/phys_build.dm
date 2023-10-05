@@ -1,6 +1,6 @@
 /datum/phystool_mode/build_mode
 	name = "Build mode"
-	desc = "LMB for build, RMB for remove. Active button for choise build type."
+	desc = "Use LMB for build mode, RMB for remover and in hands to choose between structures."
 
 	var/atom/selected_atom
 

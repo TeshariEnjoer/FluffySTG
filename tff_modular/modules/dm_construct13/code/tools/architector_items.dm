@@ -1,6 +1,6 @@
 /obj/item/clothing/glasses/debug/architector_glasses
 	name = "Architector glasses"
-	desc = "Hight-tech glasses with manys of special abilites."
+	desc = "High-tech glasses with many of special abilites."
 	icon_state = "sun"
 	inhand_icon_state = "sunglasses"
 	resistance_flags = INDESTRUCTIBLE

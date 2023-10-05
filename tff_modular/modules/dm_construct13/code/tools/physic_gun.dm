@@ -20,20 +20,20 @@
 	drop_sound = 'sound/items/handling/screwdriver_drop.ogg'
 	pickup_sound = 'tff_modular/modules/dm_construct13/sound/physgun_pickup.ogg'
 
-	//Обьект, захваченный в данный момент.
+	//The dragged object.
 	var/atom/movable/handlet_atom
-	//Существо, что использует физ ган в данный момент.
+	//The creature that is using the physgun.
 	var/mob/living/physgun_user
-	//Датум луча, между носителем физ гана и инструмента.
+	//Datum of the beam between the user and the dragged object.
 	var/datum/beam/physgun_beam
-	//Цвет эффектов физана.
+	//Color of the physgun.
 	var/effects_color = COLOR_CARP_BLUE
-	//Эффект отслеживающий наш курсор.
+	//The effect that is tracking the cursor.
 	var/atom/movable/screen/fullscreen/cursor_catcher/physgun_catcher
 
-	//Усилен ли наш физ ган.
+	//If the physgun is empowered?
 	var/force_grab = FALSE
-	//Может ли наш физ ган использовать расширенные финкции.
+	//Can the physgun use advanced settings?
 	var/advanced = FALSE
 
 	var/use_cooldown = 3 SECONDS
@@ -51,7 +51,7 @@
 	qdel(loop_sound)
 
 /**
- * Управление захватом.
+ * The control of the dragging.
  */
 /obj/item/physic_manipulation_tool/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -86,16 +86,16 @@
 
 /obj/item/physic_manipulation_tool/examine(mob/user)
 	. = ..()
-	. += span_notice("Early use manual:")
-	. += span_notice("ALT + LMB on device to pick core color.")
-	. += span_notice("LMB on object to handle.")
-	. += span_green("RMB when handle to freeze object.")
-	. += span_red("LMB when handle to throw object.")
-	. += span_notice("CTRL + LBM when handle to release.")
-	. += span_notice("ALT + LMB when handle to rotate object.")
+	. += span_notice("Express manual:")
+	. += span_notice("Use ALT + LMB on the device to pick color.")
+	. += span_notice("Use LMB on the object to drag the object.")
+	. += span_green("Use RMB while dragging to freeze the object.")
+	. += span_red("Use LMB while dragging to release the object.")
+	. += span_notice("Use CTRL + LMB while dragging to throw the object.")
+	. += span_notice("Use ALT + LMB while dragging to rotate object.")
 
 /**
- * Процессинг движения захваченого атома.
+ * The movement of the dragged object.
  */
 /obj/item/physic_manipulation_tool/process(seconds_per_tick)
 	if(!physgun_user)
@@ -162,7 +162,7 @@
 	return TRUE
 
 /**
- * Контролер сигналов.
+ * Signal controller.
  */
 
 /obj/item/physic_manipulation_tool/proc/on_clicked(atom/source, location, control, params, user)
@@ -194,7 +194,7 @@
 		release_atom()
 
 /**
- * Захват атома.
+ * Grabbing atom.
  */
 
 /obj/item/physic_manipulation_tool/proc/catch_atom(atom/movable/target, mob/user)
@@ -222,7 +222,7 @@
 	START_PROCESSING(SSfastprocess, src)
 
 /**
- * Освобождение атома.
+ * Releasing atom.
  */
 
 /obj/item/physic_manipulation_tool/proc/release_atom()
@@ -253,15 +253,15 @@
 	loop_sound.stop()
 
 /**
- * Вращение атома.
+ * Rotating atom.
  */
 
 /obj/item/physic_manipulation_tool/proc/rotate_object(atom/movable/target)
 	target.setDir(turn(target.dir,-90))
 
 /**
- * Пауза атома.
- * Закрепляет атом в воздухе, блокируя движение и каке либо взаимодействие.
+ * Freezing atom.
+ * Freezes the atom in air, blocking any movement.
  */
 
 /obj/item/physic_manipulation_tool/proc/pause_atom(atom/movable/target)

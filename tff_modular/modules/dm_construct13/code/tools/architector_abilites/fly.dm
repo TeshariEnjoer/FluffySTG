@@ -1,6 +1,6 @@
 /datum/action/cooldown/fly
 	name = "Toggle fly"
-	desc = "Grand you ability to free move, cross the space."
+	desc = "Grand you ability to move freely and cross the space."
 
 	button_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "lintel"

@@ -1,6 +1,6 @@
 /datum/phystool_mode/color_mode
 	name = "Color mode"
-	desc = "LMB for color object. RMB for set default color.Use button for choise color."
+	desc = "Use LMB to color an object. Use RMB to set default color. Use in hands to choose color."
 
 	var/selected_color
 

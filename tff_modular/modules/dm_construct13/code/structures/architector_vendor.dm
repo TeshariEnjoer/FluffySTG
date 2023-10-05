@@ -1,6 +1,6 @@
 /obj/machinery/vending/tool/super
 	name = "You (best) tool"
-	desc = "A architector tool for free!"
+	desc = "Architector tools for free!"
 	max_integrity = 99999
 	products = list(
 		/obj/item/crowbar/freeman/ultimate = 999,

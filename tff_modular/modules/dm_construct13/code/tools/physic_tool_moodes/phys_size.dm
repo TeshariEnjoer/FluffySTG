@@ -1,6 +1,6 @@
 /datum/phystool_mode/size_mode
 	name = "Size tool"
-	desc = "LMB to increase the size. RMB to decrease the size."
+	desc = "Use LMB to increase the size of an object. Use RMB to decrease the size of an object."
 
 /datum/phystool_mode/size_mode/main_act(atom/target, mob/user)
 	. = ..()

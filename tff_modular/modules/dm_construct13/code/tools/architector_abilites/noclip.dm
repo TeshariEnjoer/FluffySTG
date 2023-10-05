@@ -1,6 +1,6 @@
 /datum/action/cooldown/noclip
 	name = "Toggle noclip"
-	desc = "Grand you ability move though the solid objects. Like walls, doors, mobs e.t.c"
+	desc = "Grand you ability move through solid objects like turfs and mobs. This also renders you unclickable by other players."
 	cooldown_time = 1 SECONDS
 
 	button_icon = 'icons/effects/effects.dmi'
